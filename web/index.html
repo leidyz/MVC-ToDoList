@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Task List</title>
+    <meta name="viewport" content="width=device-width,
+    initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <link rel="stylesheet"  href="mystyle.css"/>
+  </head>
+  <body>
+    <header>
+        <h1>Task List</h1>
+        <form id="search">
+            <input 
+                type="text"
+                id="search-input"
+                placeholder="Task name" />  
+                <button type="submit">Search task</button>
+        </form>
+    </header>
+    <main>
+        <section class="task-list">
+            <h2>Tasks</h2>
+
+            <div class="tasks">
+                <div class="content">
+                    <input
+                    type="text"
+                    class="text"
+                    value="Task name"
+                    readonly
+                    />
+                </div>
+                <div class="content">
+                    <input
+                    type="text"
+                    class="text"
+                    value="Description"
+                    readonly
+                    />
+                </div>
+                <div class="content">
+                    <input
+                    type="datetime"
+                    class="datetime"
+                    value="Begin date"
+                    readonly
+                    />
+                </div>
+                <div class="content">
+                    <input
+                    type="datetime"
+                    class="datetime"
+                    value="Finish date"
+                    readonly
+                    />
+                </div>
+                <div class="content">
+                    <input
+                    type="text"
+                    class="text"
+                    value="Status"
+                    readonly
+                    />
+                </div>
+                <div class="actions">
+                    <button class="edit">Edit</button>
+                    <button class="save">Save</button>
+                    <button class="delete">Delete</button>
+                    </div>
+            </div>
+    </main>
+  </body>
+</html>
