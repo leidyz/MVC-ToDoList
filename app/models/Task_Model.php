@@ -1,9 +1,12 @@
 <?php
 
-class TaskModel {
+class Task_Model {
+    private $jsonFile;
     private $data;
+    
 
     public function __construct($data) {
+        $this->jsonFile=__DIR__.'../app/models/data/DataBase.json';
         $this->data = $data;
     }
 
