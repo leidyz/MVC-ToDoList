@@ -6,9 +6,9 @@
     "task":[ {
         "task_name": "Ideamos" ,
         "task_description": "Hacemos una lluvia de ideas de que vamos a hacer",
-        "start_date": "2023-10-11T10:34:56Z",
-        "finish_date":"2023-10-11T14:34:56Z",
-        "estate":"realizado",
+        "start_date": "2023-10-11",
+        "finish_date":"2023-10-11",
+        "status":"Realizado",
         "created_by": "Leidy Zang"
         }, 
         {
@@ -16,7 +16,7 @@
         "task_description": "Desarrollamos por partes, la idea seleccionada. Plande accion.",
         "start_date": "2023-10-13",
         "finish_date":null,
-        "estate":"En proceso",
+        "status":"En_proceso",
         "created_by": "Leidy Zang"
         },
         {
@@ -24,7 +24,7 @@
         "task_description": "Realizamos el plan de accion establecido",
         "start_date": "2023-10-16",
         "finish_date":null,
-        "estate":"Pendiente",
+        "status":"Pendiente",
         "created_by": "Leidy Zang"
         },
         {
@@ -32,7 +32,7 @@
         "task_description": "Una vez lleva a acabo nuestra idea valoramos si se ha cumplido el objetivo",
         "start_date": "2023-10-19",
         "finish_date":null,
-        "estate":"Pendiente",
+        "status":"Pendiente",
         "created_by": "Leidy Zang"
         }]
     },
@@ -45,7 +45,7 @@
         "task_description": "Consultamos varias recetas de postres",
         "start_date": "2023-10-10",
         "finish_date":"2023-10-11",
-        "estate":"realizado",
+        "status":"Realizado",
         "created_by": "Patri Manzanas"
         },
         {
@@ -53,7 +53,7 @@
         "task_description": "Ir al super y comprar los ingredientes",
         "start_date": "2023-10-11",
         "finish_date":"2023-10-12",
-        "estate":"realizado",
+        "status":"Realizado",
         "created_by": "Patri Manzanas"
         },
         {
@@ -61,7 +61,7 @@
         "task_description": "Seguimos las instrucciones de la receta para cocinar el pastel",
         "start_date": "2023-10-13",
         "finish_date":"2023-10-13",
-        "estate":"realizado",
+        "status":"Realizado",
         "created_by": "Patri Manzanas"
         },
         {
@@ -69,7 +69,7 @@
         "task_description": "Comerse el pastel",
         "start_date": "2023-10-14",
         "finish_date":"2023-10-13",
-        "estate":"anulado",
+        "status":"Anulado",
         "created_by": "Patri Manzanas"
         }]
     },
@@ -82,7 +82,7 @@
         "task_description": "Comprobar el estado del material existente",
         "start_date": "2023-10-10",
         "finish_date":"2023-10-12",
-        "estate":"realizado",
+        "status":"Realizado",
         "created_by": "Ruben Alcaide"
         },
         {
@@ -90,7 +90,7 @@
         "task_description": "Compar el material que no tenemos y si necesitamos",
         "start_date": "2023-10-13",
         "finish_date":"2023-10-13",
-        "estate":"anulado",
+        "status":"Anulado",
         "created_by": "Ruben Alcaide"
         },
         {
@@ -98,7 +98,7 @@
         "task_description": "Hacer las maletas",
         "start_date": "2023-10-14",
         "finish_date":"2023-10-14",
-        "estate":"realizado",
+        "status":"Realizado",
         "created_by": "Ruben Alcaide"
         },
         {
@@ -106,7 +106,7 @@
         "task_description": "Comrar los billetes",
         "start_date": "2023-10-14",
         "finish_date":null,
-        "estate":"pendiente",
+        "status":"Pendiente",
         "created_by": "Ruben Alcaide"
         }]
     }
