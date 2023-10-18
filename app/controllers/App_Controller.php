@@ -1,6 +1,7 @@
 <?php
 
 require_once('../app/models/Task_model.php');
+require_once('../lib/base/Controller.php');
 
 class App_Controller extends Controller 
 {

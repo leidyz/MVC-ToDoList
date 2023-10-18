@@ -1,5 +1,5 @@
 <?php
-
+//$id = uniqid();//genera un id unico
 class Task_Model {
     private $jsonFile;
     private $data;
@@ -28,8 +28,9 @@ class Task_Model {
     }
 
     public function addTask($id, $task) {
+      
         foreach ($this->data as &$user) {
-            if ($user['id'] == $id) {
+            if ($user[$id] == $id) {
                 if (!isset($user['task'])) {
                     $user['task'] = [];
                 }
@@ -42,9 +43,9 @@ class Task_Model {
 
     public function updateTask($id, $taskId, $updatedTask) {
         foreach ($this->data as &$user) {
-            if ($user['id'] == $id && isset($user['task'])) {
+            if ($user[$id] == $id && isset($user['task'])) {
                 foreach ($user['task'] as &$task) {
-                    if (isset($task['id']) && $task['id'] == $taskId) {
+                    if (isset($task[$id]) && $task[$id] == $taskId) {
                         $task = array_merge($task, $updatedTask);
                         return true;
                     }
@@ -56,9 +57,9 @@ class Task_Model {
 
     public function deleteTask($id, $taskId) {
         foreach ($this->data as &$user) {
-            if ($user['id'] == $id && isset($user['task'])) {
+            if ($user[$id] == $id && isset($user['task'])) {
                 foreach ($user['task'] as $key => $task) {
-                    if (isset($task['id']) && $task['id'] == $taskId) {
+                    if (isset($task[$id]) && $task[$id] == $taskId) {
                         unset($user['task'][$key]);
                         return true;
                     }
