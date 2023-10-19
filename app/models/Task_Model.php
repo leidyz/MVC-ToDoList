@@ -28,21 +28,20 @@ class Task_Model {
             echo "Error! try again.";
         }
     }
-    
-    public function createTask($id, $task_name, $task_description, $start_date, $finish_date, $status, $created_by) {
-       
-        $id = uniqid();
-        $this->task = new Task([
-            'id' => $id,
-            'task_name' => $task_name,
-            'task_description' => $task_description,
-            'start_date' => $start_date,
-            'finish_date'=>$finish_date,
-            'status' => $status,
-            'created_by'=> $created_by]);
-        
-        $this->saveTask();     
-    }    
+     
+    public function addTask($id, $task) {
+      
+            foreach ($this->task as &$user) {
+                if ($user[$id] == $id) {
+                    if (!isset($user['task'])) {
+                        $user['task'] = [];
+                    }
+                    $user['task'][] = $task;
+                    return true;
+                }
+            }
+            return false;
+        }
         
     public function deleteTask($id) {
         foreach ($this->task as $key => $task) {
@@ -76,7 +75,25 @@ class Task_Model {
             }
         }     
     }
-    public function showTask(){}
+    public function getAllTasksWithDetails() {
+            $tasksWithDetails = [];
+            foreach ($this->task as $user) {
+                if (isset($user['task'])) {
+                    foreach ($user['task'] as $task) {
+                        $taskDetails = [
+                            'task_name' => $task['task_name'],
+                            'task_description' => $task['task_description'],
+                            'start_date' => $task['start_date'],
+                            'finish_date' => $task['finish_date'],
+                            'status' => $task['status'],
+                            'created_by' => $task['created_by'],
+                        ];
+                        $tasksWithDetails[] = $taskDetails;
+                    }
+                }
+            }
+            return $tasksWithDetails;
+        }
 }
 
     // public function getTaskById($id) {

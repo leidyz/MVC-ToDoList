@@ -17,19 +17,19 @@ class App_Controller extends Controller
         return $this->model->getAllTasksWithDetails();
     }
 
-    public function getTaskById($id) {
-        return $this->model->getTaskById($id);
-    }
+    // public function getTaskById($id) {
+    //     return $this->model->getTaskById($id);
+    // }
 
     public function addTask($id, $task) {
         return $this->model->addTask($id, $task);
     }
 
-    public function updateTask($id, $taskId, $updatedTask) {
-        return $this->model->updateTask($id, $taskId, $updatedTask);
-    }
+    // public function updateTask($id, $taskId, $updatedTask) {
+    //     return $this->model->updateTask($id, $taskId, $updatedTask);
+    // }
 
-    public function deleteTask($id, $taskId) {
-        return $this->model->deleteTask($id, $taskId);
+    public function deleteTask($id) {
+        return $this->model->deleteTask($id);
     }
 }
