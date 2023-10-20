@@ -32,4 +32,7 @@ class App_Controller extends Controller
     public function deleteTask($id) {
         return $this->model->deleteTask($id);
     }
+    public function editTask($id,$task_name,$task_description,$start_date,$finish_date,$status,$created_by) {
+        return $this->model->editTask($id,$task_name,$task_description,$start_date,$finish_date,$status,$created_by);
+    }
 }

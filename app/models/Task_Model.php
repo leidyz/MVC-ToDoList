@@ -54,7 +54,7 @@ class Task_Model {
             return false; 
     }    
 
-    public function edit($id,$task_name,$task_description,$start_date,$finish_date,$status,$created_by){
+    public function editTask($id,$task_name,$task_description,$start_date,$finish_date,$status,$created_by){
         foreach ($this->task as $key => $task) {
             if ($task['id'] == $id) {
             
