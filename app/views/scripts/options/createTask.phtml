@@ -1,0 +1,16 @@
+<?php if (isset($newTask)) : ?>
+
+    <p>Nombre: <?php echo $newTask['task_name']; ?></p>
+    <p>Descripción: <?php echo $newTask['task_description']; ?></p>
+    <p>Fecha de incio: <?php echo $newTask['start_date']; ?></p>
+    <p>Fecha de finalizacion: <?php echo $newTask['finish_date']; ?></p>
+    <p>Estado: <?php echo $newTask['status']; ?></p>
+    <p>Tarea creada por: <?php echo $newTask['created_by']; ?></p>
+    
+
+<?php else : ?>
+
+
+<?php endif; ?>
+
+<h1>Ruta createTask correcta</h1>

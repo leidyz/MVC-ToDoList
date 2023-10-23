@@ -10,5 +10,13 @@
  * '/calendar' => 'calendar#index'
  */
 $routes = array(
-	'/test' => 'test#index'
+	'/' => 'index#index',
+	'/createTask'=>'options#createTask',
+	'/getAllTaskWithDetails'=> 'options#getAllTaskWithDetails',
+	'/deleteTask'=> 'options#deleteTask',
+	'/editTask'=> 'options#editTask',
+	'/saveTask'=> 'options#saveTask',
+
 );
+
+	

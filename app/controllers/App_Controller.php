@@ -19,7 +19,7 @@ class App_Controller extends Controller
             return $task;
         }
     public function createTaskAction(){
-           //listo y revisado
+           //listo y revisado. 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $task_id=$_POST['task_id'];
             $task_name=$_POST['task_name'];
