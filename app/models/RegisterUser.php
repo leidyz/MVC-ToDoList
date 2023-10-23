@@ -4,6 +4,7 @@ class RegisterUser{
     private $username;
     private $password;
     private $encrypted_password;
+    private $raw_password;
     public $error;
     public $success;
     private $storage = "UserData.json";
@@ -15,7 +16,7 @@ class RegisterUser{
         $this->username = filter_var($username, FILTER_SANITIZE_STRING);
 
         $this->raw_password = filter_var(trim($password), FILTER_SANITIZE_STRING);
-        $this->encrypted_password = password_hash($password,PASSWORD_DEFAULT);
+        $this->encrypted_password = password_hash($this->raw_password, PASSWORD_DEFAULT);
 
         $this->stored_users = json_decode(file_get_contents($this->storage),true);
 
@@ -24,7 +25,7 @@ class RegisterUser{
             "password" => $this->encrypted_password
         ];
         
-        if($this->checkFieldValues()){
+        if($this->checkFieldValues()){ //if empty, insert the user info
             $this->insertUser();
         }
     }
@@ -45,6 +46,7 @@ class RegisterUser{
                 return true;
             }
         }
+        return false;
     }
 
     private function insertUser(){
