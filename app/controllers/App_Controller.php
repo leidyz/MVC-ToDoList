@@ -5,13 +5,6 @@ require_once('/../lib/base/Controller.php');
 
 class App_Controller extends Controller 
 {
-	private $model;
-    private $jsonFile;
-
-    public function __construct($model) { //pendiente
-        $this->model = new Task_Model($model);
-        $this->jsonFile = '../app/models/data/DataBase.json';
-    }
     public function indexAction()
     {
         
@@ -23,11 +16,12 @@ class App_Controller extends Controller
     
             $this->view->task = $task;
            
-            return $this->model->getAllTaskWithDetails();
+            return $task;
         }
     public function createTaskAction(){
            //listo y revisado
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $task_id=$_POST['task_id'];
             $task_name=$_POST['task_name'];
             $task_description=$_POST['task_description'];
             $start_date=$_POST['start_date'];
@@ -36,6 +30,7 @@ class App_Controller extends Controller
             $created_by=$_POST['created_by'];
 
                 $taskData = [
+                    'task_id'=>$task_id,
                     'task_name' => $task_name,
                     'task_description' =>$task_description,
                     'start_date' => $start_date,
@@ -45,16 +40,43 @@ class App_Controller extends Controller
     
                 $taskModel = new Task_Model();
                 $taskModel->createTask($taskData);
-    
             }
         }
-    public function addTask($id, $task) {//pendiente
-        return $this->model->addTask($id, $task);
+    public function deleteTaskAction($task_id) {//listo y revisado
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+            $task_id = isset($_POST["task_id"]) ? $_POST["task_id"] : null;
+
+            if ($task_id !== null) {
+                $taskModel = new Task_Model();
+                $taskModel->deleteTask($task_id);
+                $_SESSION['success_message'] = 'Tasca eliminada correctamente';
+               
+                header("Location: getAllTask"); //linea que vuelve a mostrar todas las tareas, pensar si lo incluimos en mas metodos.
+
+            } else {
+                echo "La taska especificada no existe";
+            }
+        }
     }
-    public function deleteTask($id) {//pendiente
-        return $this->model->deleteTask($id);
+    public function editTaskAction($task_id) { //listo y revisado
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $task_id = isset($_POST["task_id"]) ? $_POST["task_id"] : null;
+            $newTaskData = isset($_POST["new_task_data"]) ? $_POST["new_task_data"] : null;
+    
+            if ($task_id !== null && $newTaskData !== null) {
+                $taskModel = new Task_Model();
+                $taskModel->editTask($task_id, $newTaskData);
+                $_SESSION['success_message'] = 'Tarea editada correctamente';
+            } else {
+                echo "La tarea especificada no existe o no se proporcionaron datos válidos para la edición.";
+            }
+        }
     }
-    public function editTask($id,$task_name,$task_description,$start_date,$finish_date,$status,$created_by) {//pendiente
-        return $this->model->editTask($id,$task_name,$task_description,$start_date,$finish_date,$status,$created_by);
-    }
+
+        
+    
+    
+    
+   
 }
