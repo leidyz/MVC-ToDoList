@@ -1,15 +1,15 @@
 <?php
 
 class RegisterUser{
-    private $username;
-    private $password;
-    private $encrypted_password;
-    private $raw_password;
-    public $error;
-    public $success;
+    private string $username;
+    private string $password;
+    private string $encrypted_password;
+    private string $raw_password;
+    public string $error;
+    public string $success;
     private $storage = "UserData.json";
     private $stored_users;
-    private $new_user; //array
+    private array $new_user; 
 
     public function __construct(string $username, string $password){
         $this->username = trim($this->username);

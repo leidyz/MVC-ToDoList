@@ -1,10 +1,10 @@
 <?php
 
 class LoginUser{
-    private $username;
-    private $password;
-    public $error;
-    public $success;
+    private string $username;
+    private string $password;
+    public string $error;
+    public string $success;
     private $storage = "UserData.json";
     private $stored_users;
 
@@ -21,7 +21,7 @@ class LoginUser{
                 if(password_verify($this->password,$user['password'])){
                     session_start();
                     $_SESSION['user'] = $this->username;
-                    header("location: account.php"); //here need to change to the task management page
+                    header("location: AccountView.php"); //here need to change to the task management page
                     exit();
 
                 }
