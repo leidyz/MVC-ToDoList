@@ -4,7 +4,8 @@
     "user_name":"Leidy",
     "user_surname":"Zhang",
     "task":[ {
-        "task_name": "Ideamos" ,
+        "task_id":11,
+        "task_name": "Proyecto" ,
         "task_description": "Hacemos una lluvia de ideas de que vamos a hacer",
         "start_date": "2023-10-11",
         "finish_date":"2023-10-11",
@@ -12,7 +13,8 @@
         "created_by": "Leidy Zang"
         }, 
         {
-        "task_name": "Planificamos" ,
+        "task_id":12,
+        "task_name": "Proyecto" ,
         "task_description": "Desarrollamos por partes, la idea seleccionada. Plande accion.",
         "start_date": "2023-10-13",
         "finish_date":null,
@@ -20,7 +22,8 @@
         "created_by": "Leidy Zang"
         },
         {
-        "task_name": "Ejecutamos" ,
+        "task_id":13,
+        "task_name": "Proyecto" ,
         "task_description": "Realizamos el plan de accion establecido",
         "start_date": "2023-10-16",
         "finish_date":null,
@@ -28,7 +31,8 @@
         "created_by": "Leidy Zang"
         },
         {
-        "task_name": "Evaluamos" ,
+        "task_id":14,
+        "task_name": "Proyecto" ,
         "task_description": "Una vez lleva a acabo nuestra idea valoramos si se ha cumplido el objetivo",
         "start_date": "2023-10-19",
         "finish_date":null,
@@ -41,7 +45,8 @@
     "user_name":"Patri",
     "user_surname":"Manzanas",
     "task":[ {
-        "task_name": "Buscar" ,
+        "task_id":21,
+        "task_name": "Postre" ,
         "task_description": "Consultamos varias recetas de postres",
         "start_date": "2023-10-10",
         "finish_date":"2023-10-11",
@@ -49,7 +54,8 @@
         "created_by": "Patri Manzanas"
         },
         {
-        "task_name": "Comprar" ,
+        "task_id":22,
+        "task_name": "Postre" ,
         "task_description": "Ir al super y comprar los ingredientes",
         "start_date": "2023-10-11",
         "finish_date":"2023-10-12",
@@ -57,7 +63,8 @@
         "created_by": "Patri Manzanas"
         },
         {
-        "task_name": "Cocinar" ,
+        "task_id":23,
+        "task_name": "Postre" ,
         "task_description": "Seguimos las instrucciones de la receta para cocinar el pastel",
         "start_date": "2023-10-13",
         "finish_date":"2023-10-13",
@@ -65,7 +72,8 @@
         "created_by": "Patri Manzanas"
         },
         {
-        "task_name": "Comer" ,
+        "task_id":24,
+        "task_name": "Postre" ,
         "task_description": "Comerse el pastel",
         "start_date": "2023-10-14",
         "finish_date":"2023-10-13",
@@ -77,8 +85,9 @@
     "id":3,
     "user_name":"Ruben",
     "user_surname":"Alcaide",
-    "task": [{            
-        "task_name": "Chekear" ,
+    "task": [{    
+        "task_id":31,        
+        "task_name": "Viaje" ,
         "task_description": "Comprobar el estado del material existente",
         "start_date": "2023-10-10",
         "finish_date":"2023-10-12",
@@ -86,7 +95,8 @@
         "created_by": "Ruben Alcaide"
         },
         {
-        "task_name": "Comprar" ,
+        "task_id":32,
+        "task_name": "Viaje" ,
         "task_description": "Compar el material que no tenemos y si necesitamos",
         "start_date": "2023-10-13",
         "finish_date":"2023-10-13",
@@ -94,7 +104,8 @@
         "created_by": "Ruben Alcaide"
         },
         {
-        "task_name": "maletas" ,
+        "task_id":33,
+        "task_name": "Viaje" ,
         "task_description": "Hacer las maletas",
         "start_date": "2023-10-14",
         "finish_date":"2023-10-14",
@@ -102,7 +113,8 @@
         "created_by": "Ruben Alcaide"
         },
         {
-        "task_name": "billetes" ,
+        "task_id":34,
+        "task_name": "Viaje" ,
         "task_description": "Comrar los billetes",
         "start_date": "2023-10-14",
         "finish_date":null,
