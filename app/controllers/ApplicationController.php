@@ -13,18 +13,20 @@ class ApplicationController extends Controller {
         $this->userModel = new User();
     }
 
+    public function indexAction(){
+  
+    }
     public function registerAction(){
-           //Sanitize POST data
-           $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
-           $username = $_POST['username'];
-           $password = $_POST['password'];
+        $username = $_POST['username'];
+        $password = $_POST['password'];
 
-           if($this->userModel->register($username,$password)){
-            redirect("../LoginView.php");
-        }else{
-            die("Something went wrong");
-        }
+        if($this->userModel->register($username,$password)){
+         redirect("../LoginView.php");
+     }else{
+         die("Something went wrong");
+     }
+     
     }
 
 

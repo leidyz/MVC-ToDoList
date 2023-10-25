@@ -10,6 +10,6 @@
  * '/calendar' => 'calendar#index'
  */
 $routes = array(
-	'/' => 'tasks#index',
+	'/' => 'Application#index',
 	'/tasks'=>'tasks#AccountView'
 );
