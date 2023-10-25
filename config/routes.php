@@ -10,12 +10,10 @@
  * '/calendar' => 'calendar#index'
  */
 $routes = array(
-	'/' => 'index#index',
-	'/createTask'=>'options#createTask',
-	'/getAllTaskWithDetails'=> 'options#getAllTaskWithDetails',
-	'/deleteTask'=> 'options#deleteTask',
-	'/editTask'=> 'options#editTask',
-	'/saveTask'=> 'options#saveTask',
+	'/' => 'App_#index',
+	'/getAllTask'=>'App_#getAllTaskAction',
+	//'/createTask'=> 'App_#createTaskAction',
+	
 
 );
 

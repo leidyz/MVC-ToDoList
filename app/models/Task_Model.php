@@ -1,13 +1,13 @@
 <?php
 
 class Task_Model {
-    private $jsonFile;
-    private $task;
+    protected $jsonFile;
+    protected $task=[];
     
 
     public function __construct() {
-        $this->jsonFile=__DIR__.'/../app/models/data/DataBase.json';
-        $this->task=[];
+        $this->jsonFile=__DIR__. '\data\DataBase.json';
+       // $this->task;
     }
 
     public function getTask() {
@@ -37,12 +37,12 @@ class Task_Model {
 
             file_put_contents($this->jsonFile, $newJsonData);
         }
-        public function getAllTaskWithDetails(){//listo y revisado
+        public function getAllTask(){//listo y revisado
             $jsonData = file_get_contents($this->jsonFile);
             $task= json_decode($jsonData, true);
             $taskWithDetails = [];
     
-                foreach ($this->task as $user) {
+                foreach ($task as $user) {
                     if (isset($user['task'])) {
                         foreach ($user['task'] as $task) {
                             $taskDetails = [

@@ -1,23 +1,29 @@
 <?php
 
-require_once('/../app/models/Task_model.php');
-require_once('/../lib/base/Controller.php');
+require_once(__DIR__.'\..\models\Task_Model.php');
+require_once(__DIR__.'\..\..\lib\base\Controller.php');
+require_once(__DIR__.'\..\views\scripts\options\options.phtml');
 
 class App_Controller extends Controller 
 {
-    public function indexAction()
+     public function indexAction()
     {
         
-    }
+    } 
     public function getAllTaskAction() {
         //listo y revisado
             $taskModel = new Task_Model();
-            $task = $taskModel->getAllTaskWithDetails();
-    
-            $this->view->task = $task;
+            $taskDetails = $taskModel->getAllTask();
+            $this->view->task= $taskDetails;
+            $_SESSION['taskDetails'] = $taskDetails;
            
-            return $task;
+          //var_dump($taskDetails);
+           
+            return  $taskDetails;
+           
         }
+         
+    
     public function createTaskAction(){
            //listo y revisado. 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {

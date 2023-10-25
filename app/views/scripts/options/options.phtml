@@ -7,14 +7,18 @@
 <body>
     <h1>Task List</h1>
     
-    <?php if (isset($_SESSION['success_message'])): ?>
+    <?php 
+    
+     
+    if (isset($_SESSION['success_message'])): ?>
         <div class="success-message">
             <?php echo $_SESSION['success_message']; ?>
         </div>
     <?php endif; ?>
 
-    <h2>All Tasks</h2>
-    <table>
+    <h2>All Tasks </h2>
+
+    <table >
         <thead>
             <tr>
                 <th>Task Name</th>
@@ -27,8 +31,14 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($this->task as $task): ?>
+        
+        <?php
+            if (isset($_SESSION['taskDetails'])) {
+            $taskDetails = $_SESSION['taskDetails'];
+            foreach ($taskDetails as $task): 
+    ?>  
                 <tr>
+                    
                     <td><?php echo $task['task_name']; ?></td>
                     <td><?php echo $task['task_description']; ?></td>
                     <td><?php echo $task['start_date']; ?></td>
@@ -36,8 +46,10 @@
                     <td><?php echo $task['status']; ?></td>
                     <td><?php echo $task['created_by']; ?></td>
                     <td>
+                        <?php endforeach;} ?> 
                         <!--editTask-->
                         <a href="editTask/<?php echo $task['task_id']; ?>">Edit</a>
+                        
                         <!--deleteTask-->
                         <form method="POST" action="deleteTask">
                             <input type="hidden" name="task_id" value="<?php echo $task['task_id']; ?>">
@@ -45,7 +57,7 @@
                         </form>
                     </td>
                 </tr>
-            <?php endforeach; ?>
+            
         </tbody>
     </table>
 
@@ -64,6 +76,7 @@
             <option value="Not Started">Not Started</option>
             <option value="In Progress">In Progress</option>
             <option value="Completed">Completed</option>
+            <option value="Cancelled">Cancelled</option>
         </select>
         <label for="created_by">Created By:</label>
         <input type="text" name="created_by" id="created_by" required>
