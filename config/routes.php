@@ -10,6 +10,6 @@
  * '/calendar' => 'calendar#index'
  */
 $routes = array(
-	'/test' => 'test#index',
-	'/RegisterView.phtml'=>'RegisterUser#__construct'
+	'/' => 'tasks#index',
+	'/tasks'=>'tasks#AccountView'
 );

@@ -1,17 +1,29 @@
 <?php
-
-require_once  '../app/models/RegisterUserModel.php';
-require_once  '../app/models/LoginUserModel.php';
+session_start();
+require_once  '../app/models/UserModel.php';
+require_once  '../config/environment.inc.php';
 /**
  * Base controller for the application.
  * Add general things in this controller.
  */
 class ApplicationController extends Controller {
-	
+	private $userModel;
+     
+    public function __construct(){
+        $this->userModel = new User();
+    }
 
-    public function RegisterUserAction(){
-        if(isset($_POST['submit'])){
-            $user = new RegisterUser($_POST['username'],$_POST['password']);
+    public function registerAction(){
+           //Sanitize POST data
+           $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+           $username = $_POST['username'];
+           $password = $_POST['password'];
+
+           if($this->userModel->register($username,$password)){
+            redirect("../LoginView.php");
+        }else{
+            die("Something went wrong");
         }
     }
 
@@ -43,4 +55,4 @@ class ApplicationController extends Controller {
 
 
 
-}
+

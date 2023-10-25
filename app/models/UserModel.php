@@ -1,17 +1,22 @@
 <?php
 
-class RegisterUser{
+class User extends Model{
     private string $username;
     private string $password;
     private string $encrypted_password;
     private string $raw_password;
     public string $error;
     public string $success;
-    private $storage = "UserData.json";
+    private $storage;
     private $stored_users;
     private array $new_user; 
 
-    public function __construct(string $username, string $password){
+    public function __construct(){
+        $this->storage = __DIR__ . "../../../app/models/UserData.json";
+
+    }
+
+    public function register(string $username, string $password){
         $this->username = trim($this->username);
         $this->username = filter_var($username, FILTER_SANITIZE_STRING);
 
@@ -24,10 +29,30 @@ class RegisterUser{
             "username" => $this->username,
             "password" => $this->encrypted_password
         ];
-        
+       
         if($this->checkFieldValues()){ //if empty, insert the user info
             $this->insertUser();
         }
+       
+    }
+
+    private function login($username, $password){
+        $this->username = $username;
+        $this->password = $password;
+        $this->stored_users = json_decode(file_get_contents($this->storage),true);
+        
+        foreach($this->stored_users as $user){
+            if($user['username']== $this->username){
+                if(password_verify($this->encrypted_password,$user['password'])){
+                    session_start();
+                    $_SESSION['user'] = $this->username;
+                    header("location: AccountView.php"); //here need to change to the task management page
+                    exit();
+
+                }
+            }
+        }
+        return $this->error = "Wrong username or password";
     }
 
     private function checkFieldValues(){
