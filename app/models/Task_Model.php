@@ -42,9 +42,9 @@ class Task_Model {
             $task= json_decode($jsonData, true);
             $taskWithDetails = [];
     
-                foreach ($task as $user) {
-                    if (isset($user['task'])) {
-                        foreach ($user['task'] as $task) {
+                //foreach ($task as $user) {
+                    // if (isset($user['task'])) {
+                    //     foreach ($user['task'] as $task) {
                             $taskDetails = [
                                 'task_name' => $task['task_name'],
                                 'task_description' => $task['task_description'],
@@ -54,9 +54,9 @@ class Task_Model {
                                 'created_by' => $task['created_by'],
                             ];
                             $taskWithDetails[] = $taskDetails;
-                        }
-                    }
-                }
+                    //     }
+                    // }
+               // }
                 return $taskWithDetails;
             }
     public function deleteTask($task_id) {//listo y revisado

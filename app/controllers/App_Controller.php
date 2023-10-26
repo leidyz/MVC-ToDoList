@@ -14,13 +14,14 @@ class App_Controller extends Controller
         //listo y revisado
             $taskModel = new Task_Model();
             $taskDetails = $taskModel->getAllTask();
+            
             $this->view->task= $taskDetails;
-            $_SESSION['taskDetails'] = $taskDetails;
+          
            
-          //var_dump($taskDetails);
-           
+            var_dump($taskDetails);
+         
             return  $taskDetails;
-           
+            
         }
          
     
@@ -46,7 +47,9 @@ class App_Controller extends Controller
     
                 $taskModel = new Task_Model();
                 $taskModel->createTask($taskData);
+               
             }
+           
         }
     public function deleteTaskAction($task_id) {//listo y revisado
         if ($_SERVER["REQUEST_METHOD"] == "POST") {

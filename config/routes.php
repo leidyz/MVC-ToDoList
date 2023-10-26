@@ -11,8 +11,9 @@
  */
 $routes = array(
 	'/' => 'App_#index',
-	'/getAllTask'=>'App_#getAllTaskAction',
-	//'/createTask'=> 'App_#createTaskAction',
+	'/createTask'=> 'App_#createTask',
+	'/getAllTask'=>'App_#getAllTask',
+	
 	
 
 );
