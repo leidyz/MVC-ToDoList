@@ -35,10 +35,12 @@
 </form>
 
     <h1>Task List</h1>
-    
-    <?php  if (isset($_GET['success_message'])): ?>
+    <?php
+ 
+     ?>
+    <?php  if (isset($_SESSION['success_message'])): ?>
         <div class="success-message">
-            <?php echo $_GET['success_message']; ?>
+            <?php echo $_SESSION['success_message']; ?>
         </div>
     <?php endif; ?>
    
@@ -59,20 +61,27 @@
         <tbody>
         
         <?php
-            if (isset($_SESSION['taskDetails'])) {
-            $taskDetails = $_SESSION['taskDetails'];
+        
+        $taskDetails= $this->taskDetails;
+        //var_dump($taskDetails);
+        if (isset($taskDetails) && is_array($taskDetails)): 
             foreach ($taskDetails as $task): 
     ?>  
-                <tr>
-                    
-                    <td><?php echo $task['task_name']; ?></td>
-                    <td><?php echo $task['task_description']; ?></td>
-                    <td><?php echo $task['start_date']; ?></td>
-                    <td><?php echo $task['finish_date']; ?></td>
-                    <td><?php echo $task['status']; ?></td>
-                    <td><?php echo $task['created_by']; ?></td>
-                    <td>
-                        <?php endforeach;}?> 
+        <tr>
+           
+            <td><?php echo $task['task_name']; ?></td>
+            <td><?php echo $task['task_description']; ?></td>
+            <td><?php echo $task['start_date']; ?></td>
+            <td><?php echo $task['finish_date']; ?></td>
+            <td><?php echo $task['status']; ?></td>
+            <td><?php echo $task['created_by']; ?></td>
+            <td><!-- Acciones --></td>
+        </tr>
+        <?php
+    endforeach;
+endif;
+?>
+
 
                         <!--editTask-->
 
@@ -88,8 +97,5 @@
             
         </tbody>
     </table>
-
-    
-
 </body>
 </html>

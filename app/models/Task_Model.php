@@ -28,7 +28,7 @@ class Task_Model {
         }
     }
     
-        public function createTask($newTask){//listo y revisado
+    public function createTask($newTask){//listo y revisado
             $jsonData = file_get_contents($this->jsonFile);
             $task= json_decode($jsonData, true);
     
@@ -36,29 +36,13 @@ class Task_Model {
             $newJsonData = json_encode($task, JSON_PRETTY_PRINT);
 
             file_put_contents($this->jsonFile, $newJsonData);
-        }
-        public function getAllTask(){//listo y revisado
+    }
+    public function getAllTask(){//listo y revisado
             $jsonData = file_get_contents($this->jsonFile);
-            $task= json_decode($jsonData, true);
-            $taskWithDetails = [];
-    
-                //foreach ($task as $user) {
-                    // if (isset($user['task'])) {
-                    //     foreach ($user['task'] as $task) {
-                            $taskDetails = [
-                                'task_name' => $task['task_name'],
-                                'task_description' => $task['task_description'],
-                                'start_date' => $task['start_date'],
-                                'finish_date' => $task['finish_date'],
-                                'status' => $task['status'],
-                                'created_by' => $task['created_by'],
-                            ];
-                            $taskWithDetails[] = $taskDetails;
-                    //     }
-                    // }
-               // }
-                return $taskWithDetails;
-            }
+            $taskDetails= json_decode($jsonData, true);
+    return $taskDetails;
+    }
+
     public function deleteTask($task_id) {//listo y revisado
         $jsonData = file_get_contents($this->jsonFile);
         $task= json_decode($jsonData, true);

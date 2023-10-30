@@ -2,25 +2,33 @@
 
 require_once(__DIR__.'\..\models\Task_Model.php');
 require_once(__DIR__.'\..\..\lib\base\Controller.php');
-require_once(__DIR__.'\..\views\scripts\options\options.phtml');
+//require_once(__DIR__.'\..\views\scripts\app_\index.phtml');
+
 
 class App_Controller extends Controller 
 {
      public function indexAction()
     {
-        
+        $taskModel = new Task_Model();
+            $taskDetails = $taskModel->getAllTask();
+            
+            $this->view-> taskDetails= $taskDetails;
+           
+            //var_dump($taskDetails);
+         
+            return  $this->view->taskDetails;
     } 
     public function getAllTaskAction() {
         //listo y revisado
             $taskModel = new Task_Model();
             $taskDetails = $taskModel->getAllTask();
             
-            $this->view->task= $taskDetails;
-          
+            $this->view-> taskDetails= $taskDetails;
            
-            var_dump($taskDetails);
+            //var_dump($taskDetails);
          
-            return  $taskDetails;
+            //return  $this->view->taskDetails;
+           // return View('/')->with($taskDetails);
             
         }
          
@@ -47,7 +55,8 @@ class App_Controller extends Controller
     
                 $taskModel = new Task_Model();
                 $taskModel->createTask($taskData);
-               
+                header("Location:\IT_Academy\Sprint3\web"); 
+                
             }
            
         }
