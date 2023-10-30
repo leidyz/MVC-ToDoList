@@ -1,13 +1,21 @@
 <?php
 class User {
+    private string $username;
+    private string $password;
+    private string $encrypted_password;
+    private string $raw_password;
+    public string $error;
+    public string $success;
     private $storage;
+    private $stored_users;
+    private array $new_user; 
 
     public function __construct() {
-        $this->storage = '../app/models/UserData.json';
+        $this->storage = __DIR__ . "../../../app/models/UserData.json";
     }
 
     public function register($username, $password) {
-        // Validation and sanitation logic here
+
 
         if (!$this->checkFieldValues($username, $password)) {
             throw new Exception("Both fields are required.");
@@ -41,7 +49,7 @@ class User {
     }
 
     public function login($username, $password) {
-        // Login logic
+
 
         $stored_users = json_decode(file_get_contents($this->storage), true);
 
@@ -52,8 +60,7 @@ class User {
         }
     }
 
-    // Other methods
-
+    
     private function checkFieldValues($username, $password) {
         return !empty($username) && !empty($password);
     }
@@ -79,7 +86,7 @@ class User {
     }
 
     private function authenticateUser($username, $password, $stored_users) {
-        // Authenticate user logic
+  
         foreach ($stored_users as $user) {
             if ($user['username'] == $username) {
                 if (password_verify($password, $user['password'])) {

@@ -4,11 +4,9 @@ require_once  ('../app/models/UserModel.php');
 
 class UserController extends Controller{
     private $userModel;
-    private $userData;
 
     public function __construct(){
         $this->userModel = new User();
-        $this->userData = "UserData.json";
     }
 
     public function indexAction(){
