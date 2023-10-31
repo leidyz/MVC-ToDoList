@@ -1,17 +1,18 @@
 <?php
 class User {
-    private string $username;
-    private string $password;
-    private string $encrypted_password;
-    private string $raw_password;
-    public string $error;
-    public string $success;
-    private $storage;
-    private $stored_users;
-    private array $new_user; 
+
+    private string $username = '';
+    private string $password = '';
+    private string $encrypted_password = '';
+    private string $raw_password = '';
+    public string $error = '';
+    public string $success = '';
+    private string $storage;
+    private array $stored_users = [];
+    private array $new_user = [];
 
     public function __construct() {
-        $this->storage = __DIR__ . "../../../app/models/UserData.json";
+        $this->storage = '/Applications/XAMPP/xamppfiles/htdocs/sprint3/ToDoList/app/models/UserData.json';
     }
 
     public function register($username, $password) {
@@ -21,18 +22,18 @@ class User {
             throw new Exception("Both fields are required.");
         }
 
-        $raw_password = filter_var(trim($password), FILTER_SANITIZE_STRING);
-        $encrypted_password = password_hash($raw_password, PASSWORD_DEFAULT);
+        $this->raw_password = filter_var(trim($password), FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $this->encrypted_password = password_hash($this->raw_password, PASSWORD_DEFAULT);
 
-        $stored_users = json_decode(file_get_contents($this->storage), true);
+        $this->stored_users = json_decode(file_get_contents($this->storage), true);
 
-        $new_user = [
-            "username" => $username,
-            "password" => $encrypted_password
+        $this->new_user = [
+            "username" => $this->username,
+            "password" => $this->encrypted_password
         ];
 
-        if ($this->insertUser($new_user, $stored_users)) {
-            if (file_put_contents($this->storage, json_encode($stored_users, JSON_PRETTY_PRINT)) === false) {
+        if ($this->insertUser($this->new_user, $this->stored_users)) {
+            if (file_put_contents($this->storage, json_encode($this->stored_users, JSON_PRETTY_PRINT)) === false) {
                 throw new Exception("Failed to write JSON data.");
             }
     
@@ -40,20 +41,14 @@ class User {
         } else {
             throw new Exception("An error occurred while trying to save your data. Please try again.");
         }
-        /*
-           
-            return "Your registration was successful.";
-        } else {
-            throw new Exception("An error occurred while trying to save your data. Please try again.");
-        }*/
+ 
     }
 
     public function login($username, $password) {
 
+        $this->stored_users = json_decode(file_get_contents($this->storage), true);
 
-        $stored_users = json_decode(file_get_contents($this->storage), true);
-
-        if ($this->authenticateUser($username, $password, $stored_users)) {
+        if ($this->authenticateUser($username, $password, $this->stored_users)) {
             return true;
         } else {
             throw new Exception("Wrong username or password.");

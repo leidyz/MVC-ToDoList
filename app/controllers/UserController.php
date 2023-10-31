@@ -1,6 +1,8 @@
 <?php
 
-require_once  ('../app/models/UserModel.php');
+require_once('../app/models/UserModel.php');
+require_once(__DIR__.'/../../lib/base/Controller.php');
+
 
 class UserController extends Controller{
     private $userModel;
@@ -21,21 +23,15 @@ class UserController extends Controller{
 
             try {
                 $result = $this->userModel->register($username, $password);
-                // Handle a successful registration
                 // display a success message.
                 echo $result;
-                //$this->view->render('user/LoginView.phtml');
                 header("Location: LoginView.phtml");
                 exit();
             } catch (Exception $e) {
-                // Handle registration error
                 // display an error message.
                 echo $e->getMessage();
             }
-        }/* else {
-            // Display the registration form view
-            $this->view->render('user/RegisterView.phtml');
-        }*/
+        }
     }
 
     public function LoginViewAction() {
@@ -61,10 +57,10 @@ class UserController extends Controller{
                 // For now, let's display a login error message.
                 echo $e->getMessage();
             }
-        } else {
-            // Display the login form view
-            require_once 'user/LoginView.phtml';
-        }
+        } 
+    }
+
+    public function AccountViewAction() {
     }
     
 }
