@@ -18,5 +18,17 @@
     {
         "username": "candy",
         "password": "$2y$10$UYlhWBjjb1LuCaXx0qp9Vu06Y6Jw7Fax9N7ZR5o0AgtnPBxt5EIZW"
+    },
+    {
+        "username": "qwerty",
+        "password": "$2y$10$mdD0k4g7O4GfcdwYh0dNSuRsbPApFgK.hlbIBsfdt02d3EsgSXWTO"
+    },
+    {
+        "username": "ert",
+        "password": "$2y$10$txMTDX6ZqwarZdN1JHnGu.E05m\/JX3ZibeQ\/svlAvVdZHdKAre7bK"
+    },
+    {
+        "username": "tere",
+        "password": "$2y$10$Dwts4NSsF.9K0rtN1SdWauhIip\/Fq6nxJY45EoibVd4M7CX.LIITK"
     }
 ]

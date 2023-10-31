@@ -23,12 +23,10 @@ class UserController extends Controller{
 
             try {
                 $result = $this->userModel->register($username, $password);
-                // display a success message.
                 echo $result;
                 header("Location: LoginView.phtml");
                 exit();
             } catch (Exception $e) {
-                // display an error message.
                 echo $e->getMessage();
             }
         }
@@ -42,19 +40,13 @@ class UserController extends Controller{
     
             try {
                 if ($this->userModel->login($username, $password)) {
-                    // Redirect to the account view after successful login
                     header("Location: AccountView.phtml");
                     exit();
                 } else {
-                    // Handle login failure
-                    // You can decide how to handle login errors and redirection
-                    // For now, let's display a login error message.
                     echo "Login failed.";
                 }
             } catch (Exception $e) {
-                // Handle login error
-                // You can decide how to handle login errors and redirection
-                // For now, let's display a login error message.
+     
                 echo $e->getMessage();
             }
         } 

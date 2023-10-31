@@ -5,8 +5,6 @@ class User {
     private string $password = '';
     private string $encrypted_password = '';
     private string $raw_password = '';
-    public string $error = '';
-    public string $success = '';
     private string $storage;
     private array $stored_users = [];
     private array $new_user = [];
@@ -15,7 +13,7 @@ class User {
         $this->storage = '/Applications/XAMPP/xamppfiles/htdocs/sprint3/ToDoList/app/models/UserData.json';
     }
 
-    public function register($username, $password) {
+    public function register(string $username, string $password):string {
 
 
         if (!$this->checkFieldValues($username, $password)) {
@@ -33,7 +31,6 @@ class User {
             "password" => $this->encrypted_password
         ];
 
-        // Check if the username already exists
         if ($this->usernameExists($this->username, $this->stored_users)) {
             throw new Exception("Username already exists. Please choose a different one.");
         }
@@ -42,8 +39,8 @@ class User {
             if (file_put_contents($this->storage, json_encode($this->stored_users, JSON_PRETTY_PRINT)) === false) {
                 throw new Exception("Failed to write JSON data.");
             }
-    
-            return "Your registration was successful.";
+            return "Your registration was succesful!";
+            
         } else {
             throw new Exception("An error occurred while trying to save your data. Please try again.");
         }
@@ -80,7 +77,7 @@ class User {
 
         $this->stored_users = json_decode(file_get_contents($this->storage), true);
 
-        if ($this->authenticateUser($username, $password, $this->stored_users)) {
+        if ($this->authenticateUser($this->username, $this->password, $this->stored_users)) {
             return true;
         } else {
             throw new Exception("Wrong username or password.");
