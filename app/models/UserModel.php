@@ -22,6 +22,7 @@ class User {
             throw new Exception("Both fields are required.");
         }
 
+        $this->username = $username;
         $this->raw_password = filter_var(trim($password), FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $this->encrypted_password = password_hash($this->raw_password, PASSWORD_DEFAULT);
 
@@ -31,6 +32,11 @@ class User {
             "username" => $this->username,
             "password" => $this->encrypted_password
         ];
+
+        // Check if the username already exists
+        if ($this->usernameExists($this->username, $this->stored_users)) {
+            throw new Exception("Username already exists. Please choose a different one.");
+        }
 
         if ($this->insertUser($this->new_user, $this->stored_users)) {
             if (file_put_contents($this->storage, json_encode($this->stored_users, JSON_PRETTY_PRINT)) === false) {
@@ -43,19 +49,7 @@ class User {
         }
  
     }
-
-    public function login($username, $password) {
-
-        $this->stored_users = json_decode(file_get_contents($this->storage), true);
-
-        if ($this->authenticateUser($username, $password, $this->stored_users)) {
-            return true;
-        } else {
-            throw new Exception("Wrong username or password.");
-        }
-    }
-
-    
+  
     private function checkFieldValues($username, $password) {
         return !empty($username) && !empty($password);
     }
@@ -78,6 +72,19 @@ class User {
             }
         }
         return false;
+    }
+    public function login($username, $password) {
+
+        $this->username = $username;
+        $this->password = $password;
+
+        $this->stored_users = json_decode(file_get_contents($this->storage), true);
+
+        if ($this->authenticateUser($username, $password, $this->stored_users)) {
+            return true;
+        } else {
+            throw new Exception("Wrong username or password.");
+        }
     }
 
     private function authenticateUser($username, $password, $stored_users) {

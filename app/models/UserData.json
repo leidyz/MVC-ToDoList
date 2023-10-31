@@ -2,5 +2,21 @@
     {
         "username": "",
         "password": "$2y$10$oy2fetsTnAaKgy1uw0jxeu4RlgpMjKoMto5JzBmzAsAqS80cRNjty"
+    },
+    {
+        "username": "leidy",
+        "password": "$2y$10$Sxdv\/iFvSGAr0aKOXfVgpu31b3Frp55hGQbtTIGJIUlP7fIIU.L6C"
+    },
+    {
+        "username": "patri",
+        "password": "$2y$10$0QPwosBu2GKVWk5ZRbhy.OOwVXlIF2epOG2nKDIN7rE6Rer5yACOa"
+    },
+    {
+        "username": "wendy",
+        "password": "$2y$10$1Vztxje.FgGx2.CJ3gPSP.b2UCq\/W4WWc14wU04OgG5C\/q3IBTJ2."
+    },
+    {
+        "username": "candy",
+        "password": "$2y$10$UYlhWBjjb1LuCaXx0qp9Vu06Y6Jw7Fax9N7ZR5o0AgtnPBxt5EIZW"
     }
 ]
