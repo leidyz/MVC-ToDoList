@@ -55,7 +55,6 @@
                 <th>Finish Date</th>
                 <th>Status</th>
                 <th>Created By</th>
-                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -76,26 +75,39 @@
             <td><?php echo $task['status']; ?></td>
             <td><?php echo $task['created_by']; ?></td>
             <td><!-- Acciones --></td>
+            <td>
+            <td>
+            <form method="POST" action="deleteTask">
+                    <input type="hidden" name="task_id" value="<?php echo $task['task_id']; ?>">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+            <td>
+                <form method="POST" action="editTask">
+                    <input type="hidden" name="task_id" value="<?php echo $task['task_id']; ?>">
+                    <button type="submit">Edit</button>
+                </form>
+            </td>
+           
         </tr>
-        <?php
-    endforeach;
-endif;
-?>
-
-
-                        <!--editTask-->
-
-                        <!-- <a href="editTask/<?php echo $task['task_id']; ?>">Edit</a>
-                        
-                        <--deleteTask-->
-                        <!-- <form method="POST" action="deleteTask">
-                            <input type="hidden" name="task_id" value="<?php echo $task['task_id']; ?>">
-                            <button type="submit">Delete</button>
-                       </form> -->
+        <?php    endforeach; 
+        endif;  ?>
                     </td>
                 </tr>
             
         </tbody>
     </table>
+   <!-- Ventana modal de edición -->
+   <div class="edit-modal" style="display: none;">
+    <form method="POST" action="editTask">
+        <!-- Campos de edición aquí -->
+        <input type="hidden" name="task_id" id="edit_task_id">
+        <label for="edit_task_name">Task Name:</label>
+        <input type="text" name="edit_task_name">
+        <!-- Otros campos para editar -->
+        <button type="submit" name="save" value="save">Save</button>
+    </form>
+</div>
 </body>
 </html>
+
