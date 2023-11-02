@@ -53,6 +53,7 @@ class UserController extends Controller{
     }
 
     public function AccountViewAction() {
+        $this->view->render('../app/views/user/AccountView.phtml');
     }
     
 }

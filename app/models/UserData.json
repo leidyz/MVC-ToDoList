@@ -1,34 +1,10 @@
 [
     {
-        "username": "",
-        "password": "$2y$10$oy2fetsTnAaKgy1uw0jxeu4RlgpMjKoMto5JzBmzAsAqS80cRNjty"
-    },
-    {
         "username": "leidy",
-        "password": "$2y$10$Sxdv\/iFvSGAr0aKOXfVgpu31b3Frp55hGQbtTIGJIUlP7fIIU.L6C"
+        "password": "$2y$10$VLPp6PDA2M9qpRg\/xN3w3euCWyOKLtYEYO7OlSojchNVy9\/HCyz5m"
     },
     {
         "username": "patri",
-        "password": "$2y$10$0QPwosBu2GKVWk5ZRbhy.OOwVXlIF2epOG2nKDIN7rE6Rer5yACOa"
-    },
-    {
-        "username": "wendy",
-        "password": "$2y$10$1Vztxje.FgGx2.CJ3gPSP.b2UCq\/W4WWc14wU04OgG5C\/q3IBTJ2."
-    },
-    {
-        "username": "candy",
-        "password": "$2y$10$UYlhWBjjb1LuCaXx0qp9Vu06Y6Jw7Fax9N7ZR5o0AgtnPBxt5EIZW"
-    },
-    {
-        "username": "qwerty",
-        "password": "$2y$10$mdD0k4g7O4GfcdwYh0dNSuRsbPApFgK.hlbIBsfdt02d3EsgSXWTO"
-    },
-    {
-        "username": "ert",
-        "password": "$2y$10$txMTDX6ZqwarZdN1JHnGu.E05m\/JX3ZibeQ\/svlAvVdZHdKAre7bK"
-    },
-    {
-        "username": "tere",
-        "password": "$2y$10$Dwts4NSsF.9K0rtN1SdWauhIip\/Fq6nxJY45EoibVd4M7CX.LIITK"
+        "password": "$2y$10$ON6HZSvQiWmRl7yWzDKrSua3l1GEa.sBvnuNCzNGI1k23KF1Lzd3O"
     }
 ]
