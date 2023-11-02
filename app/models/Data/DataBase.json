@@ -97,32 +97,5 @@
         "finish_date": "2023-10-14",
         "status": "Realizado",
         "created_by": "Ruben Alcaide"
-    },
-    {
-        "task_id": 12,
-        "task_name": "Viaje",
-        "task_description": "Comprar los billetes",
-        "start_date": "2023-10-14",
-        "finish_date": null,
-        "status": "Pendiente",
-        "created_by": "Ruben Alcaide"
-    },
-    {
-        "task_id": 13,
-        "task_name": "hola",
-        "task_description": "mundo",
-        "start_date": "2023-11-05",
-        "finish_date": "2023-11-05",
-        "status": "Not Started",
-        "created_by": "patri"
-    },
-    {
-        "task_name": "hola",
-        "task_description": "mundo",
-        "start_date": "2023-11-06",
-        "finish_date": "2023-11-06",
-        "status": "Not Started",
-        "created_by": "patri",
-        "task_id": 14
     }
 ]

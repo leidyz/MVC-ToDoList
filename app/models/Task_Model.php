@@ -35,6 +35,7 @@ class Task_Model {
         $jsonData = file_get_contents($this->jsonFile);
         $tasks = json_decode($jsonData, true);
         
+
         
         foreach ($tasks as $task) {
             if ($task['task_id'] === $task_id) {
@@ -54,7 +55,7 @@ class Task_Model {
                 } else {
                     $maxId = max(array_column($task, 'task_id'));
                 }
-                $newTask['task_id'] = $maxId + 1;
+                $newTask['task_id'] = $maxId +1;
                 $task[] = $newTask;
                 $newJsonData = json_encode($task, JSON_PRETTY_PRINT);
                 file_put_contents($this->jsonFile, $newJsonData);
@@ -67,19 +68,22 @@ class Task_Model {
     public function deleteTask($task_id) {
         $jsonData = file_get_contents($this->jsonFile);
         $tasks = json_decode($jsonData, true);
-    
-        foreach ($tasks as $key => $task) {
-            if ($task['task_id'] == $task_id) {
-                unset($tasks[$key]);
-    
+        //$delete=
+
+
+        //foreach ($tasks  as $task) {
+
+            
+               
+                unset($tasks[$task_id-1]);
+                               
                 $jsonData = json_encode($tasks, JSON_PRETTY_PRINT);
                 file_put_contents($this->jsonFile, $jsonData);
     
-                return true; 
-            }
-        }
-    
-        return false; 
+            //     return true; 
+            // } 
+       
+       
     }
     
     

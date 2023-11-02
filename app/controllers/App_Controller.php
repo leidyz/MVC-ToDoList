@@ -65,19 +65,21 @@ class App_Controller extends Controller
  
             if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["task_id"])) {
                 $task_id = $_POST["task_id"];
-                
+               
                 $taskModel = new Task_Model();
                 //$task = $taskModel->getTaskById($task_id);
                 
-                if ($task_id && is_object($task_id)) {
+                //if ($task_id && is_object($task_id)) {
                 
-                    $task_id->deleteTask($task_id);
-        
+                    //$task_id->deleteTask($task_id);
+                    $taskModel->deleteTask($task_id);
+//  var_dump($delete );
+//                 die();
                     $_SESSION['success_message'] = 'Tarea eliminada correctamente';
                     header("Location: /IT_Academy/Sprint3/web");
-                } else {
-                    echo "La tarea especificada no existe"; 
-                }
+                //} else {
+                  //  echo "La tarea especificada no existe"; 
+               // }
         
             } $this->view->render('app_/index.phtml');
             
