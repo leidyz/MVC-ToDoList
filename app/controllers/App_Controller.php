@@ -37,7 +37,6 @@ class App_Controller extends Controller
     public function createTaskAction(){
            //listo y revisado. 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            //$task_id= autoincrement(uniqid());
             $task_name=$_POST['task_name'];
             $task_description=$_POST['task_description'];
             $start_date=$_POST['start_date'];
@@ -46,7 +45,6 @@ class App_Controller extends Controller
             $created_by=$_POST['created_by'];
 
                 $taskData = [
-                    //'task_id'=>$task_id,
                     'task_name' => $task_name,
                     'task_description' =>$task_description,
                     'start_date' => $start_date,
@@ -67,46 +65,34 @@ class App_Controller extends Controller
                 $task_id = $_POST["task_id"];
                
                 $taskModel = new Task_Model();
-                //$task = $taskModel->getTaskById($task_id);
-                
-                //if ($task_id && is_object($task_id)) {
-                
-                    //$task_id->deleteTask($task_id);
-                    $taskModel->deleteTask($task_id);
-//  var_dump($delete );
-//                 die();
-                    $_SESSION['success_message'] = 'Tarea eliminada correctamente';
-                    header("Location: /IT_Academy/Sprint3/web");
-                //} else {
-                  //  echo "La tarea especificada no existe"; 
-               // }
-        
+                $taskModel->deleteTask($task_id);
+
+                header("Location: /IT_Academy/Sprint3/web");
             } $this->view->render('app_/index.phtml');
-            
         }
       
      
-    public function editTaskAction() {
+    // public function editTaskAction() {
        
-        $task_id = $_POST['task_id'];
+    //     $task_id = $_POST['task_id'];
         
         
-        $taskModel = new Task_Model();
-        $taskDetails = $taskModel->getTaskById($task_id);
+    //     $taskModel = new Task_Model();
+    //     $taskDetails = $taskModel->getTaskById($task_id);
     
-        include(__DIR__.'app\views\scripts\app_\index.phtml');
-    }
-    public function editTaskModalAction() {
+    //     include(__DIR__.'app\views\scripts\app_\index.phtml');
+    // }
+    // public function editTaskModalAction() {
         
-        $task_id = $_POST['task_id'];
+    //     $task_id = $_POST['task_id'];
     
        
-        $taskModel = new Task_Model();
-        $taskData = $taskModel->getTaskById($task_id); 
+    //     $taskModel = new Task_Model();
+    //     $taskData = $taskModel->getTaskById($task_id); 
     
-        
-        $this->view->render('app_/edittask.phtml', ['taskData' => $taskData]); 
-    }
+    //     header("Location: /IT_Academy/Sprint3/web");
+       
+    // }
 
     public function saveTaskAction() {
         
@@ -127,4 +113,26 @@ class App_Controller extends Controller
         // Redirige al usuario de vuelta a la página principal
         header("Location: /IT_Academy/Sprint3/web");
     }
+    public function editTaskAction() {
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $task_id = $_POST['task_id'];
+
+        
+                $updatedTaskData = [
+                    'task_description' => $_POST['task_description'],
+                    'start_date' => $_POST['start_date'],
+                    'finish_date' => $_POST['finish_date'],
+                    'status' => $_POST['status'],
+                    'created_by' => $_POST['created_by']
+                ];
+                
+ $taskModel = new Task_Model();
+                $taskModel->editTask($task_id, $updatedTaskData);
+
+                header("Location: /IT_Academy/Sprint3/web");
+            
+        }
+    }
+    
+    
 }

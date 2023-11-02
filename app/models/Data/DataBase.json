@@ -81,21 +81,12 @@
         "created_by": "Ruben Alcaide"
     },
     {
-        "task_id": 10,
-        "task_name": "Viaje",
-        "task_description": "Comprar el material que no tenemos y si necesitamos",
-        "start_date": "2023-10-13",
-        "finish_date": "2023-10-13",
-        "status": "Anulado",
-        "created_by": "Ruben Alcaide"
-    },
-    {
-        "task_id": 11,
-        "task_name": "Viaje",
-        "task_description": "Hacer las maletas",
-        "start_date": "2023-10-14",
-        "finish_date": "2023-10-14",
-        "status": "Realizado",
-        "created_by": "Ruben Alcaide"
+        "task_name": "hola",
+        "task_description": "mundo",
+        "start_date": "2023-11-09",
+        "finish_date": "2023-11-09",
+        "status": "In Progress",
+        "created_by": "patri",
+        "task_id": 10
     }
 ]

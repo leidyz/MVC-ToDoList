@@ -35,8 +35,6 @@ class Task_Model {
         $jsonData = file_get_contents($this->jsonFile);
         $tasks = json_decode($jsonData, true);
         
-
-        
         foreach ($tasks as $task) {
             if ($task['task_id'] === $task_id) {
                 return $task;
@@ -68,42 +66,31 @@ class Task_Model {
     public function deleteTask($task_id) {
         $jsonData = file_get_contents($this->jsonFile);
         $tasks = json_decode($jsonData, true);
-        //$delete=
-
-
-        //foreach ($tasks  as $task) {
-
             
-               
-                unset($tasks[$task_id-1]);
+            unset($tasks[$task_id-1]);
                                
-                $jsonData = json_encode($tasks, JSON_PRETTY_PRINT);
-                file_put_contents($this->jsonFile, $jsonData);
-    
-            //     return true; 
-            // } 
-       
-       
+        $jsonData = json_encode($tasks, JSON_PRETTY_PRINT);
+        file_put_contents($this->jsonFile, $jsonData);   
     }
     
     
-    public function editTask($task_id, $newTaskData) {
+    public function editTask($task_id, $updatedTaskData) {
         $jsonData = file_get_contents($this->jsonFile);
-        $task = json_decode($jsonData, true);
-    
-        foreach ($task as &$currentTask) { // Usamos & para obtener una referencia al elemento actual
-            if ($currentTask['task_id'] == $task_id) {
-                $currentTask['task_name'] = $newTaskData['task_name'];
-                $currentTask['task_description'] = $newTaskData['task_description'];
-                $currentTask['start_date'] = $newTaskData['start_date'];
-                $currentTask['finish_date'] = $newTaskData['finish_date'];
-                $currentTask['status'] = $newTaskData['status'];
-                $currentTask['created_by'] = $newTaskData['created_by'];
+        $tasks = json_decode($jsonData, true);
+
+        foreach ($tasks as & $task) {
+            if ($task['task_id']=== $task_id) {
+                $task['task_name'] = $updatedTaskData['task_name'];
+                $task['task_description'] = $updatedTaskData['task_description'];
+                $task['start_date'] = $updatedTaskData['start_date'];
+                $task['finish_date'] = $updatedTaskData['finish_date'];
+                $task['status'] = $updatedTaskData['status'];
+                $task['created_by'] = $updatedTaskData['created_by'];
             }
         }
-    
-        $newJsonData = json_encode($task, JSON_PRETTY_PRINT);
-        file_put_contents($this->jsonFile, $newJsonData);
+
+        $jsonData = json_encode($tasks, JSON_PRETTY_PRINT);
+        file_put_contents($this->jsonFile, $jsonData);
     }
     
     
