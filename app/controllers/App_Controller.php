@@ -70,49 +70,28 @@ class App_Controller extends Controller
                 header("Location: /IT_Academy/Sprint3/web");
             } $this->view->render('app_/index.phtml');
         }
-      
-     
-    // public function editTaskAction() {
-       
-    //     $task_id = $_POST['task_id'];
-        
-        
-    //     $taskModel = new Task_Model();
-    //     $taskDetails = $taskModel->getTaskById($task_id);
-    
-    //     include(__DIR__.'app\views\scripts\app_\index.phtml');
-    // }
-    // public function editTaskModalAction() {
-        
-    //     $task_id = $_POST['task_id'];
-    
-       
-    //     $taskModel = new Task_Model();
-    //     $taskData = $taskModel->getTaskById($task_id); 
-    
-    //     header("Location: /IT_Academy/Sprint3/web");
-       
-    // }
 
-    public function saveTaskAction() {
+        public function saveTaskAction() {
+            if ($_SERVER["REQUEST_METHOD"] === "POST") {
+                $task_id = $_POST['task_id'];
+                $newTaskData = [
+                    'task_id' => $task_id,
+                    'task_name' => $_POST['task_name'],
+                    'task_description' => $_POST['task_description'],
+                    'start_date' => $_POST['start_date'],
+                    'finish_date' => $_POST['finish_date'],
+                    'status' => $_POST['status'],
+                    'created_by' => $_POST['created_by']
+                ];
         
-        $task_id = $_POST['task_id'];
-        $newTaskData = [
-            'task_name' => $_POST['task_name'],
-            'task_description' => $_POST['task_description'],
-            'start_date' => $_POST['start_date'],
-            'finish_date' => $_POST['finish_date'],
-            'status' => $_POST['status'],
-            'created_by' => $_POST['created_by']
-        ];
-    
-        // Actualiza los datos de la tarea en el modelo
-        $taskModel = new Task_Model();
-        $taskModel->editTask($task_id, $newTaskData);
-    
-        // Redirige al usuario de vuelta a la página principal
-        header("Location: /IT_Academy/Sprint3/web");
-    }
+                // Actualiza los datos de la tarea en el modelo
+                $taskModel = new Task_Model();
+                $taskModel->saveTask($newTaskData);
+        
+                // Redirige al usuario de vuelta a la página principal
+                header("Location: /IT_Academy/Sprint3/web");
+            }
+        }
     public function editTaskAction() {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $task_id = $_POST['task_id'];
@@ -125,10 +104,10 @@ class App_Controller extends Controller
                     'status' => $_POST['status'],
                     'created_by' => $_POST['created_by']
                 ];
-                
+
  $taskModel = new Task_Model();
                 $taskModel->editTask($task_id, $updatedTaskData);
-
+               
                 header("Location: /IT_Academy/Sprint3/web");
             
         }

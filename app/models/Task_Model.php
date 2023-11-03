@@ -23,9 +23,24 @@ class Task_Model {
     public function getJsonFile() {
         return $this->jsonFile;
     }
-    private function saveTask()  {
-        $result = file_put_contents($this->jsonFile, json_encode($this->task, JSON_PRETTY_PRINT));
-        
+    private function saveTask($taskData) {
+        $jsonData = file_get_contents($this->jsonFile);
+        $tasks = json_decode($jsonData, true);
+    
+        foreach ($tasks as &$task) {
+            if ($task['task_id'] === $taskData['task_id']) {
+                $task['task_name'] = $taskData['task_name'];
+                $task['task_description'] = $taskData['task_description'];
+                $task['start_date'] = $taskData['start_date'];
+                $task['finish_date'] = $taskData['finish_date'];
+                $task['status'] = $taskData['status'];
+                $task['created_by'] = $taskData['created_by'];
+            }
+        }
+    
+        $jsonData = json_encode($tasks, JSON_PRETTY_PRINT);
+        $result = file_put_contents($this->jsonFile, $jsonData);
+    
         if ($result === false) {
             echo "Error! try again.";
         }

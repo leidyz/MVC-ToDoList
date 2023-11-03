@@ -74,20 +74,24 @@
         if (isset($taskDetails) && is_array($taskDetails)): 
             foreach ($taskDetails as $task): 
     ?>  
-             <tr>
-                        <td>
-                            <input type="text" name="task_name" value="<?php echo $task['task_name']; ?>" disabled>
-                            <input type="hidden" name="task_id" value="<?php echo $task['task_id']; ?>">
-                        </td>
-                        <td><input type="text" name="task_description" value="<?php echo $task['task_description']; ?>" disabled></td>
-                        <td><input type="date" name="start_date" value="<?php echo $task['start_date']; ?>" disabled></td>
-                        <td><input type="date" name="finish_date" value="<?php echo $task['finish_date']; ?>" disabled></td>
-                        <td><input type="text" name="status" value="<?php echo $task['status']; ?>" disabled></td>
-                        <td><input type="text" name="created_by" value="<?php echo $task['created_by']; ?>" disabled></td>
-                        <td>
-                            <button class="edit-button bg-blue-500 text-white px-2 py-1 rounded">Editar</button>
-                            <button class="save-button bg-green-500 text-white px-2 py-1 rounded" style="display: none;">Guardar</button>
-                        </td>
+             <tr class="editable-row">
+<tr>
+    <td>
+        <form method="POST" action="saveTask">
+        <td> <input type="hidden" name="task_id" value="<?php echo $task['task_id']; ?>"></td>
+        <td><input type="text" name="task_name" value="<?php echo $task['task_name']; ?>" disabled></td>
+    
+    <td><input type="text" name="task_description" value="<?php echo $task['task_description']; ?>" disabled></td>
+    <td><input type="date" name="start_date" value="<?php echo $task['start_date']; ?>" disabled></td>
+    <td><input type="date" name="finish_date" value="<?php echo $task['finish_date']; ?>" disabled></td>
+    <td><input type="text" name="status" value="<?php echo $task['status']; ?>" disabled></td>
+    <td><input type="text" name="created_by" value="<?php echo $task['created_by']; ?>" disabled></td>
+    <td>
+        <button class="edit-button bg-blue-500 text-white px-2 py-1 rounded">Editar</button>
+        <button type="submit" class="save-button bg-green-500 text-white px-2 py-1 rounded" style="display: none;">Guardar</button>
+    </td>
+</form>
+</tr>
                         <td>
                             <form method="POST" action="deleteTask">
                                 <input type="hidden" name="task_id" value="<?php echo $task['task_id']; ?>">
@@ -101,40 +105,34 @@
     </table>
 
     <script>
-        const editButtons = document.querySelectorAll('.edit-button');
-        const saveButtons = document.querySelectorAll('.save-button');
+    const editButtons = document.querySelectorAll('.edit-button');
+    const saveButtons = document.querySelectorAll('.save-button');
 
-        for (let i = 0; i < editButtons.length; i++) {
-            editButtons[i].addEventListener('click', () => {
-                const row = editButtons[i].closest('tr'); // Encuentra la fila asociada al botón "Editar"
-                row.classList.add('editable-row'); // Aplica el fondo amarillo solo a esta fila
+    for (let i = 0; i < editButtons.length; i++) {
+        editButtons[i].addEventListener('click', (event) => {
+            event.preventDefault();
+            const row = editButtons[i].closest('tr');
+            row.classList.add('editable-row');
+            for (const field of row.querySelectorAll('input')) {
+                field.removeAttribute('disabled');
+            }
+            editButtons[i].style.display = 'none';
+            saveButtons[i].style.display = 'block';
+        });
 
-                // Habilita la edición solo en la fila actual
-                for (const field of row.querySelectorAll('input')) {
-                    field.removeAttribute('disabled');
-                }
-
-                editButtons[i].style.display = 'none';
-                saveButtons[i].style.display = 'block';
-            });
-
-            saveButtons[i].addEventListener('click', () => {
-                const row = saveButtons[i].closest('tr'); // Encuentra la fila asociada al botón "Guardar"
-                // ... (resto del código de guardar)
-
-                // Deshabilita la edición y quita el fondo amarillo de la fila actual
-                for (const field of row.querySelectorAll('input')) {
-                    field.setAttribute('disabled', 'true');
-                }
-                row.classList.remove('editable-row');
-
-                editButtons[i].style.display = 'block';
-                saveButtons[i].style.display = 'none';
-
-                // Envía los datos actualizados al servidor (controla esto en tu servidor)
-            });
-        }
-    </script>
+        saveButtons[i].addEventListener('click', (event) => {
+            event.preventDefault();
+            const row = saveButtons[i].closest('tr');
+            for (const field of row.querySelectorAll('input')) {
+                field.setAttribute('disabled', 'true');
+            }
+            row.classList.remove('editable-row');
+            editButtons[i].style.display = 'block';
+            saveButtons[i].style.display = 'none';
+            // Envía los datos actualizados al servidor (debes implementar esto)
+        });
+    }
+</script>
             
         </tbody>
     </table>
