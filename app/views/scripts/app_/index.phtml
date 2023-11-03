@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -129,7 +128,47 @@
             row.classList.remove('editable-row');
             editButtons[i].style.display = 'block';
             saveButtons[i].style.display = 'none';
-            // Envía los datos actualizados al servidor (debes implementar esto)
+            // Envía los datos actualizados al servidor (debes implementar esto) REVISAR DES DE AQUI!!!!
+            function enviarDatosActualizadosAlServidor(task_id, updatedData) {
+    // URL del servidor donde se procesarán los datos actualizados
+    const url = '/IT_Academy/Sprint3/web/saveTask'; // Ruta correcta en tu aplicación
+
+    // Datos a enviar al servidor
+    const data = {
+        task_id: task_id,
+        task_name: updatedData.task_name,
+        task_description: updatedData.task_description,
+        start_date: updatedData.start_date,
+        finish_date: updatedData.finish_date,
+        status: updatedData.status,
+        created_by: updatedData.created_by
+    };
+
+    // Configura la solicitud HTTP POST
+    const requestOptions = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: new URLSearchParams(data)
+    };
+
+    // Realiza la solicitud al servidor
+    fetch(url, requestOptions)
+        .then(response => {
+            if (response.ok) {
+                // La solicitud se completó con éxito
+                console.log('Datos actualizados con éxito');
+            } else {
+                // La solicitud falló, maneja los errores aquí
+                console.error('Error al enviar datos al servidor');
+            }
+        })
+        .catch(error => {
+            // Error de red u otras excepciones
+            console.error('Error en la solicitud:', error);
+        });
+}
         });
     }
 </script>
@@ -139,4 +178,3 @@
    
 </body>
 </html>
-
