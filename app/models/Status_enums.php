@@ -1,10 +1,10 @@
 <?php
 
 enum Status{
-    case Pendiente;
-    case Realizado;
-    case En_proceso;
-    case Anulado;
+    case Not_Started;
+    case Pending;
+    case In_Progress;
+    case Cancelled;
 }
 
 

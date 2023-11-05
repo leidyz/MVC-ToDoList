@@ -5,7 +5,7 @@
         "task_description": "Hacemos una lluvia de ideas de que vamos a hacer",
         "start_date": "2023-10-11",
         "finish_date": "2023-10-11",
-        "status": "Realizado",
+        "status": "Completed",
         "created_by": "Leidy Zang"
     },
     {
@@ -14,7 +14,7 @@
         "task_description": "Desarrollamos por partes, la idea seleccionada. Plande accion.",
         "start_date": "2023-10-13",
         "finish_date": null,
-        "status": "En_proceso",
+        "status": "In Progress",
         "created_by": "Leidy Zang"
     },
     {
@@ -23,7 +23,7 @@
         "task_description": "Realizamos el plan de accion establecido",
         "start_date": "2023-10-16",
         "finish_date": null,
-        "status": "Pendiente",
+        "status": "Not Started",
         "created_by": "Leidy Zang"
     },
     {
@@ -32,7 +32,7 @@
         "task_description": "Una vez lleva a acabo nuestra idea valoramos si se ha cumplido el objetivo",
         "start_date": "2023-10-19",
         "finish_date": null,
-        "status": "Pendiente",
+        "status": "Not Started",
         "created_by": "Leidy Zang"
     },
     {
@@ -41,7 +41,7 @@
         "task_description": "Consultamos varias recetas de postres",
         "start_date": "2023-10-10",
         "finish_date": "2023-10-11",
-        "status": "Realizado",
+        "status": "Completed",
         "created_by": "Patri Manzanas"
     },
     {
@@ -50,7 +50,7 @@
         "task_description": "Ir al super y comprar los ingredientes",
         "start_date": "2023-10-11",
         "finish_date": "2023-10-12",
-        "status": "Realizado",
+        "status": "Completed",
         "created_by": "Patri Manzanas"
     },
     {
@@ -59,7 +59,7 @@
         "task_description": "Seguimos las instrucciones de la receta para cocinar el pastel",
         "start_date": "2023-10-13",
         "finish_date": "2023-10-13",
-        "status": "Realizado",
+        "status": "Completed",
         "created_by": "Patri Manzanas"
     },
     {
@@ -68,7 +68,7 @@
         "task_description": "Comerse el pastel",
         "start_date": "2023-10-14",
         "finish_date": "2023-10-13",
-        "status": "Anulado",
+        "status": "Cancelled",
         "created_by": "Patri Manzanas"
     },
     {
@@ -77,16 +77,25 @@
         "task_description": "Comprobar el estado del material existente",
         "start_date": "2023-10-10",
         "finish_date": "2023-10-12",
-        "status": "Realizado",
+        "status": "Completed",
         "created_by": "Ruben Alcaide"
     },
     {
         "task_name": "hola",
         "task_description": "mundo",
-        "start_date": "2023-11-04",
-        "finish_date": "2023-11-04",
+        "start_date": "2023-11-17",
+        "finish_date": "2023-11-17",
         "status": "Not Started",
         "created_by": "patri",
-        "task_id": 10
+        "task_id": 11
+    },
+    {
+        "task_name": "hola",
+        "task_description": "mundo",
+        "start_date": "2023-11-18",
+        "finish_date": "2023-11-18",
+        "status": "Not Started",
+        "created_by": "patri",
+        "task_id": 12
     }
 ]
