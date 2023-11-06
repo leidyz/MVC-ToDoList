@@ -6,17 +6,17 @@
 <body>
     <h1>Edit Task</h1>
    
-    <?php var_dump('HOLAAAAAA');
+    <?php //var_dump('HOLAAAAAA');
    
             $taskDetails= $this->taskDetails;
-        var_dump($taskDetails);
+        //var_dump($taskDetails);
             if (isset($taskDetails) && is_array($taskDetails)): 
               // foreach ($taskDetails as $task): 
     
     ?>
 
 
-    <form method="POST" action="editTask">
+    <form method="POST" action="saveTask">
         
         <input type="hidden" name="task_id" value="<?php  echo $taskDetails['task_id']; ?>">
 
@@ -32,18 +32,23 @@
         <label for="finish_date">Finish Date:</label>
         <input type="date" name="finish_date" value="<?php echo $taskDetails['finish_date']; ?>">
         
-      <!--<label for="status">Status:</label>
+      <label for="status">Status:</label>
         <select name="status_select" id="status" >
             <option value="Not_Started" <?php echo ($taskDetails['status'] === 'Not_Started') ? 'selected' : ''; ?>>Not Started</option>
             <option value="In_Progress" <?php echo ($taskDetails['status'] === 'In_Progress') ? 'selected' : ''; ?>>In Progress</option>
             <option value="Completed" <?php echo ($taskDetails['status'] === 'Completed') ? 'selected' : ''; ?>>Completed</option>
             <option value="Cancelled" <?php echo ($taskDetails['status'] === 'Cancelled') ? 'selected' : ''; ?>>Cancelled</option>
-        </select>-->
+        </select>
                
         <label for="created_by">Created By:</label>
         <input type="text" name="created_by" value="<?php echo $taskDetails['created_by']; ?>">
+
+        <form method="POST" action="saveTask">
+                        <input type="hidden" name="task_id" value="<?php echo $taskDetails['task_id']; ?>">
+                        <button type="submit">Save</button>
+                    </form>
         
-        <button type="submit" name="save" value="save">Save</button>
+    
     </form>
     <?php   // endforeach; 
             endif;  ?>

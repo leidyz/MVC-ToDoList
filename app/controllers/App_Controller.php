@@ -92,20 +92,20 @@ class App_Controller extends Controller
 
         }
     
-    public function editTaskModalAction() {
+    // public function editTaskModalAction() {
         
-        $task_id = $_POST['task_id'];
+    //     $task_id = $_POST['task_id'];
     
-        $taskModel = new Task_Model();
-        $taskDetails = $taskModel->getTaskById($task_id); 
+    //     $taskModel = new Task_Model();
+    //     $taskDetails = $taskModel->getTaskById($task_id); 
     
-        $this->view->render('C:\xampp\htdocs\IT_Academy\Sprint3\app\views\scripts\app_\edittask.phtml', ['taskDetails' => $taskDetails]); 
+    //     $this->view->render('C:\xampp\htdocs\IT_Academy\Sprint3\app\views\scripts\app_\edittask.phtml', ['taskDetails' => $taskDetails]); 
        
-    }
+    // }
 
     public function saveTaskAction() {
         
-        $task_id = $_POST['task_id'];
+        //$task_id = $_POST['task_id'];
         $newTaskData = [
             'task_name' => $_POST['task_name'],
             'task_description' => $_POST['task_description'],
@@ -117,7 +117,8 @@ class App_Controller extends Controller
     
         // Actualiza los datos de la tarea en el modelo
         $taskModel = new Task_Model();
-        $taskModel->editTask($task_id, $newTaskData);
+
+        $taskModel->saveTask($newTaskData);
     
         // Redirige al usuario de vuelta a la página principal
         header("Location: /IT_Academy/Sprint3/web");
