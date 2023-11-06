@@ -1,5 +1,5 @@
-{
-    "0": {
+[
+    {
         "task_id": 1,
         "task_name": "Proyecto",
         "task_description": "Hacemos una lluvia de ideas de que vamos a hacer",
@@ -8,7 +8,7 @@
         "status": "Completed",
         "created_by": "Leidy Zang"
     },
-    "1": {
+    {
         "task_id": 2,
         "task_name": "Proyecto",
         "task_description": "Desarrollamos por partes, la idea seleccionada. Plande accion.",
@@ -17,7 +17,7 @@
         "status": "In Progress",
         "created_by": "Leidy Zang"
     },
-    "2": {
+    {
         "task_id": 3,
         "task_name": "Proyecto",
         "task_description": "Realizamos el plan de accion establecido",
@@ -26,7 +26,7 @@
         "status": "Not Started",
         "created_by": "Leidy Zang"
     },
-    "3": {
+    {
         "task_id": 4,
         "task_name": "Proyecto",
         "task_description": "Una vez lleva a acabo nuestra idea valoramos si se ha cumplido el objetivo",
@@ -35,7 +35,7 @@
         "status": "Not Started",
         "created_by": "Leidy Zang"
     },
-    "4": {
+    {
         "task_id": 5,
         "task_name": "Postre",
         "task_description": "Consultamos varias recetas de postres",
@@ -44,7 +44,7 @@
         "status": "Completed",
         "created_by": "Patri Manzanas"
     },
-    "5": {
+    {
         "task_id": 6,
         "task_name": "Postre",
         "task_description": "Ir al super y comprar los ingredientes",
@@ -53,7 +53,7 @@
         "status": "Completed",
         "created_by": "Patri Manzanas"
     },
-    "6": {
+    {
         "task_id": 7,
         "task_name": "Postre",
         "task_description": "Seguimos las instrucciones de la receta para cocinar el pastel",
@@ -62,7 +62,7 @@
         "status": "Completed",
         "created_by": "Patri Manzanas"
     },
-    "7": {
+    {
         "task_id": 8,
         "task_name": "Postre",
         "task_description": "Comerse el pastel",
@@ -71,7 +71,7 @@
         "status": "Cancelled",
         "created_by": "Patri Manzanas"
     },
-    "8": {
+    {
         "task_id": 9,
         "task_name": "Viaje",
         "task_description": "Comprobar el estado del material existente",
@@ -80,40 +80,13 @@
         "status": "Completed",
         "created_by": "Ruben Alcaide"
     },
-    "9": {
+    {
         "task_name": "hola",
         "task_description": "mundo",
-        "start_date": "2023-11-17",
-        "finish_date": "2023-11-17",
-        "status": "Not Started",
-        "created_by": "patri",
-        "task_id": 11
-    },
-    "10": {
-        "task_name": "hola",
-        "task_description": "mundo",
-        "start_date": "2023-11-18",
-        "finish_date": "2023-11-18",
-        "status": "Not Started",
-        "created_by": "patri",
-        "task_id": 12
-    },
-    "11": {
-        "task_name": "vfsfg",
-        "task_description": "asdfad",
-        "start_date": "2023-11-20",
-        "finish_date": "2023-11-20",
-        "status": "Completed",
-        "created_by": "Pipas",
-        "task_id": 13
-    },
-    "task_id": {
-        "task_id": "13",
-        "task_name": "hola",
-        "task_description": "asdfad",
-        "start_date": "2023-11-20",
-        "finish_date": "2023-11-20",
-        "status": null,
-        "created_by": "Pipas"
+        "start_date": "2023-11-08",
+        "finish_date": "2023-11-08",
+        "status": "Cancelled",
+        "created_by": "pACOOO",
+        "task_id": 10
     }
-}
+]

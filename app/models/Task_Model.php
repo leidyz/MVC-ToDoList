@@ -9,21 +9,6 @@ class Task_Model {
         $this->jsonFile=__DIR__. '\data\DataBase.json';
        // $this->task;
     }
-
-    public function getTask() {
-        return $this->task;
-    }
-    public function setTask() {
-        return $this->task;
-    }
-   
-    public function setJsonFile($jsonFile) {
-        $this->jsonFile=$jsonFile;
-    }
-    public function getJsonFile() {
-        return $this->jsonFile;
-    }
-   
     public function getTaskById($task_id) {
        
         $jsonData = file_get_contents($this->jsonFile);
@@ -62,39 +47,24 @@ class Task_Model {
         $jsonData = file_get_contents($this->jsonFile);
         $tasks = json_decode($jsonData, true);
             
-            unset($tasks[$task_id-2]);
+        unset($tasks[$task_id-1]);
                                
         $jsonData = json_encode($tasks, JSON_PRETTY_PRINT);
         file_put_contents($this->jsonFile, $jsonData);   
     }
-    public function saveTask($newTask)
-    {
-
+    public function saveTask($task_id, $newTaskData){
         $jsonData = file_get_contents($this->jsonFile);
-        $task= json_decode($jsonData, true);
 
-           $task['task_id'] = $newTask;
+        $tasks = json_decode($jsonData, true);
 
-        $jsonData = json_encode($task, JSON_PRETTY_PRINT);
-        file_put_contents($this->jsonFile, $jsonData);
-    }
-    public function editTask( $taskDetails) {
-
-        $jsonData = file_get_contents($this->jsonFile);
-        $task= json_decode($jsonData, true);
-
-        if ($task['task_id'] = $taskDetails['task_id']) {
-            $task['task_name'] = $taskDetails['task_name'];
-            $task['task_description'] = $taskDetails['task_description'];
-            $task['start_date'] = $taskDetails['start_date'];
-            $task['finish_date'] = $taskDetails['finish_date'];
-            $task['status'] = $taskDetails['status'];
-            $task['created_by'] = $taskDetails['created_by']; 
+        foreach ($tasks as &$task) {
+            if ($task['task_id'] == $task_id) {
+                
+                $task = array_merge($task, $newTaskData);
+                break;
+            }
         }
-            $newJsonData = json_encode($task, JSON_PRETTY_PRINT);
-            file_put_contents($this->jsonFile, $newJsonData);
+        $newJsonData = json_encode($tasks, JSON_PRETTY_PRINT);
+        file_put_contents($this->jsonFile, $newJsonData);
     }
-    
- 
-
 }

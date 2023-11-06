@@ -33,7 +33,7 @@
         <input type="date" name="finish_date" value="<?php echo $taskDetails['finish_date']; ?>">
         
       <label for="status">Status:</label>
-        <select name="status_select" id="status" >
+        <select name="status" id="status" >
             <option value="Not_Started" <?php echo ($taskDetails['status'] === 'Not_Started') ? 'selected' : ''; ?>>Not Started</option>
             <option value="In_Progress" <?php echo ($taskDetails['status'] === 'In_Progress') ? 'selected' : ''; ?>>In Progress</option>
             <option value="Completed" <?php echo ($taskDetails['status'] === 'Completed') ? 'selected' : ''; ?>>Completed</option>
