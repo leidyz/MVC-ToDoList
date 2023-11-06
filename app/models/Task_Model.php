@@ -62,7 +62,7 @@ class Task_Model {
         $jsonData = file_get_contents($this->jsonFile);
         $tasks = json_decode($jsonData, true);
             
-            unset($tasks[$task_id-1]);
+            unset($tasks[$task_id-2]);
                                
         $jsonData = json_encode($tasks, JSON_PRETTY_PRINT);
         file_put_contents($this->jsonFile, $jsonData);   

@@ -61,14 +61,16 @@ class App_Controller extends Controller
         }
         public function deleteTaskAction() {
  
-            if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
-                $task_id = $_POST["task_id"];
-               
+            if ($_SERVER["REQUEST_METHOD"] == "GET" ) {
+                $task_id = (int)$_GET["task_id"];
+                
                 $taskModel = new Task_Model();
                 $taskModel->deleteTask($task_id);
 
+                var_dump($task_id);
+
                 header("Location: /IT_Academy/Sprint3/web");
-            } $this->view->render('app_/index.phtml');
+            } 
         }
             
      public function emptyEditAction(){
