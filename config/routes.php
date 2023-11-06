@@ -14,5 +14,7 @@ $routes = array(
 	'/index' => 'User#index',
 	'/RegisterView.phtml'=>'User#RegisterView',
 	'/LoginView.phtml'=>'User#LoginView',
-	'/AccountView.phtml'=>'User#AccountView'
+	'/AccountView.phtml'=>'User#AccountView',
+	'/pruebaView.phtml'=>'User#PruebaView'
+	
 );

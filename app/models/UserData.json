@@ -14,5 +14,9 @@
     {
         "username": "tete",
         "password": "$2y$10$qL5d3HI4hj2YWgt.iNqvVOWnZTxnouCWSkptrSgeXPIwjFY3C1KZC"
+    },
+    {
+        "username": "pepe",
+        "password": "$2y$10$5hSDiapUtAMuKx87kfR\/Y.uL6J9owufwk8C1BczUPXZv6HGeMKcjK"
     }
 ]
