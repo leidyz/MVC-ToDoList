@@ -105,20 +105,21 @@ class App_Controller extends Controller
 
     public function saveTaskAction() {
         
-        //$task_id = $_POST['task_id'];
+        //
         $newTaskData = [
+            'task_id' => $_POST['task_id'],
             'task_name' => $_POST['task_name'],
             'task_description' => $_POST['task_description'],
             'start_date' => $_POST['start_date'],
             'finish_date' => $_POST['finish_date'],
-            'status' => $_POST['status-select'],
+            'status' => $_POST['status'],
             'created_by' => $_POST['created_by']
         ];
     
         // Actualiza los datos de la tarea en el modelo
         $taskModel = new Task_Model();
 
-        $taskModel->saveTask($newTaskData);
+        $taskModel->saveTask( $newTaskData);
     
         // Redirige al usuario de vuelta a la página principal
         header("Location: /IT_Academy/Sprint3/web");

@@ -67,26 +67,18 @@ class Task_Model {
         $jsonData = json_encode($tasks, JSON_PRETTY_PRINT);
         file_put_contents($this->jsonFile, $jsonData);   
     }
-    public function saveTask($task)
+    public function saveTask($newTask)
     {
 
         $jsonData = file_get_contents($this->jsonFile);
         $task= json_decode($jsonData, true);
 
-        if (empty($task)) {
-            $maxId = 0;
-            } else {
-                $maxId = max(array_column($task, 'task_id'));
-            }
-            $newTask['task_id'] = $maxId +1;
-            $task[] = $newTask;
-            $newJsonData = json_encode($task, JSON_PRETTY_PRINT);
-            file_put_contents($this->jsonFile, $newJsonData);
+           $task['task_id'] = $newTask;
 
         $jsonData = json_encode($task, JSON_PRETTY_PRINT);
         file_put_contents($this->jsonFile, $jsonData);
     }
-    public function editTask($task, $taskDetails) {
+    public function editTask( $taskDetails) {
 
         $jsonData = file_get_contents($this->jsonFile);
         $task= json_decode($jsonData, true);
