@@ -16,7 +16,8 @@ $routes = array(
     '/editTask' => 'App_#editTask',
     '/deleteTask' => 'App_#deleteTask',
     '/saveTask' => 'App_#saveTask',
-	'/edittask' => 'App_#edittask',
+	'/edittask' => 'App_#edittask', 
+    '/emptyEdit'=> 'App_#edittask',
 );
 
 	

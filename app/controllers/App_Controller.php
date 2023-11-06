@@ -71,7 +71,9 @@ class App_Controller extends Controller
             } $this->view->render('app_/index.phtml');
         }
             
-     
+     public function emptyEditAction(){
+
+     }
     
        
         public function editTaskAction() {
@@ -82,21 +84,22 @@ class App_Controller extends Controller
             $taskDetails = $taskModel->getTaskById($task_id); 
        
            // var_dump($taskDetails); funciona
-           
-            $this->view->render('app_/edittask.phtml', ['taskDetails' => $taskDetails]);
-            
+           $this->view->taskDetails= $taskDetails;
+           return  $this->view->taskDetails;
+          // var_dump($taskDetails);
+
         }
     
-    // public function editTaskModalAction() {
+    public function editTaskModalAction() {
         
-    //     $task_id = $_POST['task_id'];
+        $task_id = $_POST['task_id'];
     
-    //     $taskModel = new Task_Model();
-    //     $taskDetails = $taskModel->getTaskById($task_id); 
+        $taskModel = new Task_Model();
+        $taskDetails = $taskModel->getTaskById($task_id); 
     
-    //     $this->view->render('C:\xampp\htdocs\IT_Academy\Sprint3\app\views\scripts\app_\edittask.phtml', ['taskDetails' => $taskDetails]); 
+        $this->view->render('C:\xampp\htdocs\IT_Academy\Sprint3\app\views\scripts\app_\edittask.phtml', ['taskDetails' => $taskDetails]); 
        
-    // }
+    }
 
     public function saveTaskAction() {
         

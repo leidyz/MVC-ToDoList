@@ -6,12 +6,17 @@
 <body>
     <h1>Edit Task</h1>
    
-    <?php var_dump('HOLAAAAAA'); var_dump($taskDetails); ?>
-  
-    <?php
+    <?php var_dump('HOLAAAAAA');
+   
+            $taskDetails= $this->taskDetails;
+        var_dump($taskDetails);
+            if (isset($taskDetails) && is_array($taskDetails)): 
+              // foreach ($taskDetails as $task): 
+    
+    ?>
 
-?>
-    <form method="POST" action="saveTask">
+
+    <form method="POST" action="editTask">
         
         <input type="hidden" name="task_id" value="<?php  echo $taskDetails['task_id']; ?>">
 
@@ -40,7 +45,8 @@
         
         <button type="submit" name="save" value="save">Save</button>
     </form>
-  
+    <?php   // endforeach; 
+            endif;  ?>
 </body>
 
 </html>
