@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Task</title>
+</head>
+<body>
+    <h1>Edit Task</h1>
+   
+    <?php //var_dump('HOLAAAAAA');
+   
+            $taskDetails= $this->taskDetails;
+        //var_dump($taskDetails);
+            if (isset($taskDetails) && is_array($taskDetails)): 
+              // foreach ($taskDetails as $task): 
+    
+    ?>
+
+
+    <form method="POST" action="saveTask">
+        
+        <input type="hidden" name="task_id" value="<?php  echo $taskDetails['task_id']; ?>">
+
+        <label for="task_name">Task Name:</label>
+        <input type="text" name="task_name" value="<?php  echo $taskDetails['task_name']; ?>">
+
+        <label for="task_description">Task Description:</label>
+        <input type="text" name="task_description" value="<?php echo $taskDetails['task_description']; ?>">
+        
+        <label for="start_date">Start Date:</label>
+        <input type="date" name="start_date" value="<?php echo $taskDetails['start_date']; ?>">
+        
+        <label for="finish_date">Finish Date:</label>
+        <input type="date" name="finish_date" value="<?php echo $taskDetails['finish_date']; ?>">
+        
+      <label for="status">Status:</label>
+        <select name="status" id="status" >
+            <option value="Not_Started" <?php echo ($taskDetails['status'] === 'Not_Started') ? 'selected' : ''; ?>>Not Started</option>
+            <option value="In_Progress" <?php echo ($taskDetails['status'] === 'In_Progress') ? 'selected' : ''; ?>>In Progress</option>
+            <option value="Completed" <?php echo ($taskDetails['status'] === 'Completed') ? 'selected' : ''; ?>>Completed</option>
+            <option value="Cancelled" <?php echo ($taskDetails['status'] === 'Cancelled') ? 'selected' : ''; ?>>Cancelled</option>
+        </select>
+               
+        <label for="created_by">Created By:</label>
+        <input type="text" name="created_by" value="<?php echo $taskDetails['created_by']; ?>">
+
+        <form method="POST" action="saveTask">
+                        <input type="hidden" name="task_id" value="<?php echo $taskDetails['task_id']; ?>">
+                        <button type="submit">Save</button>
+                    </form>
+        
+    
+    </form>
+    <?php   // endforeach; 
+            endif;  ?>
+</body>
+
+</html>

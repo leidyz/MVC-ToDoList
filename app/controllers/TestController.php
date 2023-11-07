@@ -1,6 +1,6 @@
 <?php
 
-class TestController extends ApplicationController
+class TestController extends App_Controller 
 {
 	public function indexAction()
 	{

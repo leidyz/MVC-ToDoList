@@ -1,0 +1,92 @@
+[
+    {
+        "task_id": 1,
+        "task_name": "Proyecto",
+        "task_description": "Hacemos una lluvia de ideas de que vamos a hacer",
+        "start_date": "2023-10-11",
+        "finish_date": "2023-10-11",
+        "status": "Completed",
+        "created_by": "Leidy Zang"
+    },
+    {
+        "task_id": 2,
+        "task_name": "Proyecto",
+        "task_description": "Desarrollamos por partes, la idea seleccionada. Plande accion.",
+        "start_date": "2023-10-13",
+        "finish_date": null,
+        "status": "In Progress",
+        "created_by": "Leidy Zang"
+    },
+    {
+        "task_id": 3,
+        "task_name": "Proyecto",
+        "task_description": "Realizamos el plan de accion establecido",
+        "start_date": "2023-10-16",
+        "finish_date": null,
+        "status": "Not Started",
+        "created_by": "Leidy Zang"
+    },
+    {
+        "task_id": 4,
+        "task_name": "Proyecto",
+        "task_description": "Una vez lleva a acabo nuestra idea valoramos si se ha cumplido el objetivo",
+        "start_date": "2023-10-19",
+        "finish_date": null,
+        "status": "Not Started",
+        "created_by": "Leidy Zang"
+    },
+    {
+        "task_id": 5,
+        "task_name": "Postre",
+        "task_description": "Consultamos varias recetas de postres",
+        "start_date": "2023-10-10",
+        "finish_date": "2023-10-11",
+        "status": "Completed",
+        "created_by": "Patri Manzanas"
+    },
+    {
+        "task_id": 6,
+        "task_name": "Postre",
+        "task_description": "Ir al super y comprar los ingredientes",
+        "start_date": "2023-10-11",
+        "finish_date": "2023-10-12",
+        "status": "Completed",
+        "created_by": "Patri Manzanas"
+    },
+    {
+        "task_id": 7,
+        "task_name": "Postre",
+        "task_description": "Seguimos las instrucciones de la receta para cocinar el pastel",
+        "start_date": "2023-10-13",
+        "finish_date": "2023-10-13",
+        "status": "Completed",
+        "created_by": "Patri Manzanas"
+    },
+    {
+        "task_id": 8,
+        "task_name": "Postre",
+        "task_description": "Comerse el pastel",
+        "start_date": "2023-10-14",
+        "finish_date": "2023-10-13",
+        "status": "Cancelled",
+        "created_by": "Patri Manzanas"
+    },
+    {
+        "task_id": 9,
+        "task_name": "Viaje",
+        "task_description": "Comprobar el estado del material existente",
+        "start_date": "2023-10-10",
+        "finish_date": "2023-10-12",
+        "status": "Completed",
+        "created_by": "Ruben Alcaide"
+    },
+    {
+        "task_name": "hola",
+        "task_description": "mundo",
+        "start_date": "2023-11-08",
+        "finish_date": "2023-11-08",
+        "status": "Cancelled",
+        "created_by": "pACOOO",
+        "task_id": 10
+    }
+]
