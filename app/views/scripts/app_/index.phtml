@@ -76,6 +76,8 @@
                     <th scope="col" class="px-4 py-4">Finish Date</th>
                     <th scope="col" class="px-4 py-4">Status</th>
                     <th scope="col" class="px-4 py-4">Created By</th>
+                    <th scope="col" class="px-4 py-4"></th>
+                    <th scope="col" class="px-4 py-4"></th>
                 </tr>
             </thead>
             <tbody>
@@ -87,8 +89,8 @@
             if (isset($taskDetails) && is_array($taskDetails)): 
                 foreach ($taskDetails as $task): 
         ?>  
-            <tr>
-                <div class="border-b bg-gray-50 dark:border-gray-700">
+            <tr class="border-b bg-gray-50 dark:border-gray-700">
+                
             
                 <td scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white"><?php echo $task['task_name']; ?></td>
                 <td class="px-4 py-3 max-w-[12rem] truncate"><?php echo $task['task_description']; ?></td>
@@ -96,7 +98,7 @@
                 <td class="px-4 py-3"><?php echo $task['finish_date']; ?></td>
                 <td class="px-4 py-3"><?php echo $task['status']; ?></td>
                 <td class="px-4 py-3"><?php echo $task['created_by']; ?></td>
-                </div> 
+              
                 <td><!-- Acciones --></td>
                 <td>
                 <td>
