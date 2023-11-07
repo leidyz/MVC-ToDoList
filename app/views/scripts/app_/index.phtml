@@ -76,8 +76,6 @@
                     <th scope="col" class="px-4 py-4">Finish Date</th>
                     <th scope="col" class="px-4 py-4">Status</th>
                     <th scope="col" class="px-4 py-4">Created By</th>
-                    <th scope="col" class="px-4 py-4">Delete</th>
-                    <th scope="col" class="px-4 py-4">Edit</th>
                 </tr>
             </thead>
             <tbody>
@@ -98,21 +96,20 @@
                 <td class="px-4 py-3"><?php echo $task['finish_date']; ?></td>
                 <td class="px-4 py-3"><?php echo $task['status']; ?></td>
                 <td class="px-4 py-3"><?php echo $task['created_by']; ?></td>
-                <td class="px-4 py-3"></td>
-                <td class="px-4 py-3"></td>
+      
               
                 <td><!-- Acciones --></td>
                 <td>
                 <td>
                 <form method="GET" action="deleteTask">
                         <input type="hidden" name="task_id" value="<?php echo $task['task_id']; ?>">
-                        <button type="submit" class="flex items-center text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-3 py-2 text-center dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">Delete</button>
+                        <button type="button" data-modal-target="popup-modal" data-modal-toggle="popup-modal" class="flex items-center text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-3 py-2 text-center dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">Delete</button>
                     </form>
                 </td>
                 <td>
                     <form method="POST" action="emptyEdit">
                         <input type="hidden" name="task_id" value="<?php echo $task['task_id']; ?>">
-                        <button type="button" data-modal-target="popup-modal" data-modal-toggle="popup-modal" class="flex items-center text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-3 py-2 text-center dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-green-900">Edit</button>
+                        <button type="submit" class="flex items-center text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-3 py-2 text-center dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-green-900">Edit</button>
                     </form>
                 </td>
             
