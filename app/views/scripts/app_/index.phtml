@@ -57,25 +57,25 @@
 
     <br><br>
 
-        <h1>Task List</h1>
+    <div class="overflow-x-auto">
+
+        <h1>All Tasks</h1>
         
         <?php  if (isset($_SESSION['success_message'])): ?>
             <div class="success-message">
                 <?php echo $_SESSION['success_message']; ?>
             </div>
         <?php endif; ?>
-    
-        <h2>All Tasks </h2>
         
-        <table >
-            <thead>
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400" >
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
-                    <th>Task Name</th>
-                    <th>Task Description</th>
-                    <th>Start Date</th>
-                    <th>Finish Date</th>
-                    <th>Status</th>
-                    <th>Created By</th>
+                    <th scope="col" class="px-4 py-4">Task Name</th>
+                    <th scope="col" class="px-4 py-4">Task Description</th>
+                    <th scope="col" class="px-4 py-4">Start Date</th>
+                    <th scope="col" class="px-4 py-4">Finish Date</th>
+                    <th scope="col" class="px-4 py-4">Status</th>
+                    <th scope="col" class="px-4 py-4">Created By</th>
                 </tr>
             </thead>
             <tbody>
@@ -87,14 +87,14 @@
             if (isset($taskDetails) && is_array($taskDetails)): 
                 foreach ($taskDetails as $task): 
         ?>  
-            <tr>
+            <tr class="border-b dark:border-gray-700">
             
-                <td><?php echo $task['task_name']; ?></td>
-                <td><?php echo $task['task_description']; ?></td>
-                <td><?php echo $task['start_date']; ?></td>
-                <td><?php echo $task['finish_date']; ?></td>
-                <td><?php echo $task['status']; ?></td>
-                <td><?php echo $task['created_by']; ?></td>
+                <td scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white"><?php echo $task['task_name']; ?></td>
+                <td class="px-4 py-3 max-w-[12rem] truncate"><?php echo $task['task_description']; ?></td>
+                <td class="px-4 py-3"><?php echo $task['start_date']; ?></td>
+                <td class="px-4 py-3"><?php echo $task['finish_date']; ?></td>
+                <td class="px-4 py-3"><?php echo $task['status']; ?></td>
+                <td class="px-4 py-3"><?php echo $task['created_by']; ?></td>
                 <td><!-- Acciones --></td>
                 <td>
                 <td>
@@ -122,6 +122,7 @@
     
     
 
+    </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.js"></script>
