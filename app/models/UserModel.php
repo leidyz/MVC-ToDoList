@@ -10,7 +10,7 @@ class User {
     private array $new_user = [];
 
     public function __construct() {
-        $this->storage = '/Applications/XAMPP/xamppfiles/htdocs/sprint3/ToDoList/app/models/UserData.json';
+        $this->storage = 'C:\xampp\htdocs\IT_Academy\Sprint3\app\models\UserData.json';
     }
 
     public function register(string $username, string $password):string {

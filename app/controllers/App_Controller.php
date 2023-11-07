@@ -42,7 +42,7 @@ class App_Controller extends Controller{
     
                 $taskModel = new Task_Model();
                 $taskModel->createTask($taskData);
-                header("Location:\IT_Academy\Sprint3\web");      
+                header("Location: /IT_Academy/Sprint3/web/AccountView.phtml");      
         }
            
     }
@@ -56,7 +56,7 @@ class App_Controller extends Controller{
 
             var_dump($task_id);
 
-            header("Location: /IT_Academy/Sprint3/web");
+            header("Location: /IT_Academy/Sprint3/web/AccountView.phtml");
         } 
     }   
     public function emptyEditAction(){
@@ -98,6 +98,6 @@ class App_Controller extends Controller{
             
             $taskModel = new Task_Model();
             $taskModel->saveTask($task_id, $newTaskData);
-        } header("Location: /IT_Academy/Sprint3/web");
+        } header("Location: /IT_Academy/Sprint3/web/AccountView.phtml");
     }
  }
