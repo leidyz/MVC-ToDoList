@@ -10,7 +10,11 @@
  * '/calendar' => 'calendar#index'
  */
 $routes = array(
-    '/' => 'App_#index',
+	'/' => 'User#index',
+	'/index' => 'User#index',
+	'/RegisterView.phtml'=>'User#RegisterView',
+	'/LoginView.phtml'=>'User#LoginView',
+	'/AccountView.phtml'=>'App_#index',
     '/getAllTask' => 'App_#getAllTask',
     '/createTask' => 'App_#createTask',
     '/editTask' => 'App_#editTask',
@@ -18,6 +22,7 @@ $routes = array(
     '/saveTask' => 'App_#saveTask',
 	'/edittask' => 'App_#edittask', 
     '/emptyEdit'=> 'App_#edittask',
+	
 );
 
 	
