@@ -1,7 +1,7 @@
 <?php
 
-require_once(__DIR__.'\..\models\Task_Model.php');
-require_once(__DIR__.'\..\..\lib\base\Controller.php');
+require_once(__DIR__.'/../models/Task_Model.php');
+require_once(__DIR__.'/../../lib/base/Controller.php');
 //require_once(__DIR__.'\..\views\scripts\app_\index.phtml');
 
 
@@ -54,7 +54,7 @@ class App_Controller extends Controller
     
                 $taskModel = new Task_Model();
                 $taskModel->createTask($taskData);
-                header("Location:\IT_Academy\Sprint3\web"); 
+  
                 
             }
            
@@ -69,9 +69,8 @@ class App_Controller extends Controller
 
                 var_dump($task_id);
 
-                header("Location: /IT_Academy/Sprint3/web");
-            } 
-        }
+              }
+            }
             
      public function emptyEditAction(){
 
@@ -120,7 +119,6 @@ class App_Controller extends Controller
 
         $taskModel->saveTask($newTaskData);
     
-        // Redirige al usuario de vuelta a la página principal
-        header("Location: /IT_Academy/Sprint3/web");
+        // Redirige al usuario de vuelta a la página principal 
     }
  }

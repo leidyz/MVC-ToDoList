@@ -6,7 +6,7 @@ class Task_Model {
     
 
     public function __construct() {
-        $this->jsonFile=__DIR__. '\data\DataBase.json';
+        $this->jsonFile=__DIR__. '/data/DataBase.json';
        // $this->task;
     }
 
