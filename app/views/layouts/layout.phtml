@@ -6,24 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gradient-to-r from-red-200 via-red-300 to-yellow-200">
-
-    <nav class="bg-white border-gray-200 dark:bg-gray-900">
-    <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
-        <a href="/Sprint3/ToDoList/web/index" class="flex items-center">
-            <img class="mx-auto h-10 w-auto" src="images/todolis_logo.png" alt="ToDoListLogo">
-            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">LEIPA</span>
-        </a>
-        <div class="flex items-center">
-            <a href="LoginView.phtml" class="text-sm  text-pink-600 dark:text-pink-500 hover:underline">Login</a>
-        </div>
-    </div>
-    </nav>
-
-    <!-- Main Content Section -->
-    <div class="container mx-auto mt-8 p-4">
-        <?= $this->content() ?>
-    </div>
+<body>
+	<?php echo $this->content(); ?>
 </body>
 </html>
 
