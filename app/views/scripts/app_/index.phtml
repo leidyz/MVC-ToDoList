@@ -87,7 +87,7 @@
             if (isset($taskDetails) && is_array($taskDetails)): 
                 foreach ($taskDetails as $task): 
         ?>  
-            <tr class="border-b dark:border-gray-700">
+            <tr class="border-b bg-gray-50 dark:border-gray-700">
             
                 <td scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white"><?php echo $task['task_name']; ?></td>
                 <td class="px-4 py-3 max-w-[12rem] truncate"><?php echo $task['task_description']; ?></td>
@@ -100,13 +100,13 @@
                 <td>
                 <form method="GET" action="deleteTask">
                         <input type="hidden" name="task_id" value="<?php echo $task['task_id']; ?>">
-                        <button type="submit">Delete</button>
+                        <button type="submit" class="flex items-center text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-3 py-2 text-center dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">Delete</button>
                     </form>
                 </td>
                 <td>
                     <form method="POST" action="emptyEdit">
                         <input type="hidden" name="task_id" value="<?php echo $task['task_id']; ?>">
-                        <button type="submit">Edit</button>
+                        <button type="submit" class="py-2 px-3 flex items-center text-sm font-medium text-center text-white bg-primary-700 rounded-lg hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Edit</button>
                     </form>
                 </td>
             
