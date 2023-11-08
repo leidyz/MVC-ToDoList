@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Register Form</title>
+    <link rel="stylesheet"  href="mystyle.css"/>
+  </head>
+  <body class="mx-auto max-w-screen-xl px-4 lg:px-12">
+    <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+        <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+            <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Registration form</h2><br><br>
+        </div>
+
+        <form action="" method="post" enctype="multipart/form-data" autocomplete="off">
+            <h6 class="block text-sm font-medium leading-6 text-gray-900">Both fields are required</h6>
+            <br><br>
+           
+            <label for="username" class="block text-sm font-medium leading-6 text-gray-900">Username</label>
+            <input id="username" name="username" type="text" autocomplete="username" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+
+            <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
+            <input id="password" name="password" type="text" autocomplete="password" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            
+            <br><br>
+            <button type="submit" name="submit" class="flex w-full justify-center rounded-md text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Register</button>
+
+        </form>
+
+    </div>
+
+</html>
