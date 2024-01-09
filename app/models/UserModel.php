@@ -10,7 +10,7 @@ class User {
     private array $new_user = [];
 
     public function __construct() {
-        $this->storage = '\..\models\UserData.json';
+        $this->storage= ROOT_PATH . '/app/models/UserData.json';
     }
 
     public function register(string $username, string $password):string {

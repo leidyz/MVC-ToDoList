@@ -6,8 +6,10 @@ class Task_Model {
     
 
     public function __construct() {
-        $this->jsonFile=__DIR__. '\data\DataBase.json';
-       // $this->task;
+        
+        $this->jsonFile= ROOT_PATH . '/app/models/Data\DataBase.json';
+        $this->jsonFile = str_replace("\\","/", $this->jsonFile );
+
     }
     public function getTaskById($task_id) {
        
@@ -68,3 +70,4 @@ class Task_Model {
         file_put_contents($this->jsonFile, $newJsonData);
     }
 }
+?>

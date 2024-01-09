@@ -1,8 +1,9 @@
 <?php
 
-require_once(__DIR__.'\..\models\Task_Model.php');
+require_once(ROOT_PATH . '/app/models/Task_Model.php');
+require_once(ROOT_PATH . '/lib/base/Controller.php');
 
-require_once(__DIR__.'\..\..\lib\base\Controller.php');
+
 
 class App_Controller extends Controller{
     public function indexAction() {
